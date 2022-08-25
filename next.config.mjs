@@ -15,5 +15,5 @@ function defineNextConfig(config) {
 export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
-  standalone: true,
+  output: "standalone",
 });
