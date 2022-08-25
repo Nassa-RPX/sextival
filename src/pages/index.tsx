@@ -13,11 +13,12 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen w-screen snap-y snap-mandatory overflow-scroll">
-        <Panel>
-          <Hero />
-        </Panel>
+      <main className="h-screen w-screen snap-y snap-mandatory overflow-y-scroll">
+        <Hero />
         <Panel>2</Panel>
+        <Panel>3</Panel>
+        <Panel>4</Panel>
+        <Panel>5</Panel>
       </main>
     </>
   );

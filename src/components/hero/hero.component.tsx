@@ -1,8 +1,10 @@
+import { Panel } from "../base";
+
 const Hero = () => {
   return (
-    <div>
+    <Panel gradient>
       <span>Hero</span>
-    </div>
+    </Panel>
   );
 };
 
