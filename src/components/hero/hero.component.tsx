@@ -4,7 +4,7 @@ import { Panel, Spacer } from "../base";
 
 const Hero = () => {
   return (
-    <Panel gradient>
+    <Panel hero>
       <Image
         src="/hero.png"
         width={790}
@@ -13,13 +13,13 @@ const Hero = () => {
         objectFit="contain"
       />
 
-      <Spacer type="vertical" dimension="big" />
+      <Spacer type="y" dimension="md" />
 
       <HeroTitle text="INTERVENTI" />
       <HeroTitle text="ARTE" />
       <HeroTitle text="MUSICA" />
 
-      <Spacer type="vertical" dimension="small" />
+      <Spacer type="y" dimension="sm" />
 
       <HeroTagline color={"text-gray-800"}>VIENI</HeroTagline>
       <HeroTagline color={"text-white"} leading="leading-none">

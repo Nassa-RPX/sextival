@@ -1,13 +1,13 @@
 interface SpacerProps {
-  type: "vertical" | "horizontal" | "full";
-  dimension: "small" | "medium" | "big";
+  type: "y" | "x" | "full";
+  dimension: "sm" | "md" | "bg";
 }
 
 const Spacer = ({ type, dimension }: SpacerProps) => {
-  const d = dimension === "small" ? "2" : dimension === "medium" ? "4" : "6";
-  const t = type === "vertical" ? "py" : type === "horizontal" ? "px" : "p";
+  const d = dimension === "sm" ? "2" : dimension === "md" ? "4" : "6";
+  const t = type === "y" ? "py" : type === "x" ? "px" : "p";
 
-  return <span className={`${t}-${d}`} />;
+  return <div className={`${t}-${d}`} />;
 };
 
 export default Spacer;
