@@ -8,9 +8,9 @@ interface PanelProps extends BaseProps {
 const Panel = (props: PanelProps) => {
   return (
     <section
-      className={`snap-start min-w-screen min-h-screen text-gray-900 ${
-        props.gradient ? "bg-cover bg-fixed bg-sex-gradient" : "bg-white-100"
-      } p-8`}
+      className={`snap-start min-w-screen min-h-screen text-gray-900 p-8 flex flex-col align-center ${
+        props.gradient ? "bg-cover bg-fixed bg-sex-gradient" : "bg-red-200"
+      }`}
     >
       {props.children}
     </section>

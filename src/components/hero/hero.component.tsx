@@ -4,7 +4,13 @@ import { Panel } from "../base";
 const Hero = () => {
   return (
     <Panel gradient>
-      <Image src="/hero.png" width={790} height={790} alt="Logo Sextival" />
+      <Image
+        src="/hero.png"
+        width={790}
+        height={790}
+        alt="Logo Sextival"
+        objectFit="contain"
+      />
     </Panel>
   );
 };
