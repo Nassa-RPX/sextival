@@ -3,8 +3,11 @@ import Head from "next/head";
 
 import Hero from "@sextival/components/hero";
 import { Panel } from "@sextival/components/base";
+import useMainScroll from "@sextival/hooks/use-main-scroll";
 
 const Home: NextPage = () => {
+  const { ref, snapType, handleScroll } = useMainScroll();
+
   return (
     <>
       <Head>
@@ -13,7 +16,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="h-screen w-screen snap-y snap-mandatory overflow-y-scroll">
+      <main
+        ref={ref}
+        className={`h-screen w-screen scroll-smooth snap-y ${snapType} overflow-y-scroll font-main`}
+        onScroll={handleScroll}
+      >
         <Hero />
         <Panel>2</Panel>
         <Panel>3</Panel>
