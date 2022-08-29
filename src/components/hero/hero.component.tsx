@@ -1,17 +1,14 @@
-import { BaseProps } from "@sextival/types/react.types";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { BaseProps } from "@sextival/types/react.types";
 import { Panel, Spacer } from "../base";
+import { useState } from "react";
 
 const Hero = () => {
   return (
     <Panel hero>
-      <Image
-        src="/hero.png"
-        width={790}
-        height={790}
-        alt="Logo Sextival"
-        objectFit="contain"
-      />
+      <HeroImage />
 
       <Spacer type="y" dimension="md" />
 
@@ -27,6 +24,30 @@ const Hero = () => {
         SESSUALE
       </HeroTagline>
     </Panel>
+  );
+};
+
+const HeroImage = () => {
+  const [loaded, setLoaded] = useState<boolean>(false);
+
+  return (
+    <motion.div
+      variants={{
+        initial: { opacity: 0, scale: 0.8 },
+        loaded: { opacity: 1, scale: 1 },
+      }}
+      initial="initial"
+      animate={loaded ? "loaded" : "initial"}
+    >
+      <Image
+        src="/hero.png"
+        width={790}
+        height={790}
+        alt="Logo Sextival"
+        objectFit="contain"
+        onLoadingComplete={() => setLoaded(true)}
+      />
+    </motion.div>
   );
 };
 
