@@ -25,7 +25,7 @@ const Home: NextPage = () => {
         <Panel>2</Panel>
         <Panel>3</Panel>
         <Panel>4</Panel>
-        <Panel>5</Panel>
+        <Panel isLastOne>5</Panel>
       </main>
     </>
   );
