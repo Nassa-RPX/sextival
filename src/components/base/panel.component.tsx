@@ -28,7 +28,9 @@ const Panel = (props: PanelProps) => {
           )}
         >
           <AnimatedNassa hero={props.hero} />
-          <div className="absolute w-[120px] -left-4 top-8">Scopri di piu</div>
+          <div className="absolute w-[120px] -left-4 top-9 flex">
+            <span>Scopri di piu</span>
+          </div>
         </div>
       )}
     </section>
