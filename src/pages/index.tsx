@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import Hero from "@sextival/components/hero";
-import { Panel } from "@sextival/components/base";
 import useMainScroll from "@sextival/hooks/use-main-scroll";
+
+import { Panel } from "@sextival/components/base";
+
+// sections
+import Hero from "@sextival/components/hero";
+import About from "@sextival/components/about";
 
 const Home: NextPage = () => {
   const { ref, snapType, handleScroll } = useMainScroll();
@@ -22,7 +26,7 @@ const Home: NextPage = () => {
         onScroll={handleScroll}
       >
         <Hero />
-        <Panel>2</Panel>
+        <About />
         <Panel>3</Panel>
         <Panel>4</Panel>
         <Panel isLastOne>5</Panel>

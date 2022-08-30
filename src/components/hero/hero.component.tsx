@@ -2,7 +2,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { BaseProps } from "@sextival/types/react.types";
-import { Panel, Spacer } from "../base";
+import { Panel } from "../base";
 import { useState } from "react";
 
 const Hero = () => {
@@ -10,13 +10,13 @@ const Hero = () => {
     <Panel hero>
       <HeroImage />
 
-      <Spacer type="y" dimension="md" />
+      <span className="py-6" />
 
       <HeroTitle text="INTERVENTI" />
       <HeroTitle text="ARTE" />
       <HeroTitle text="MUSICA" />
 
-      <Spacer type="y" dimension="sm" />
+      <span className="py-2" />
 
       <HeroTagline color={"text-gray-800"}>VIENI</HeroTagline>
       <HeroTagline color={"text-white"} leading="leading-none">
@@ -38,13 +38,14 @@ const HeroImage = () => {
       }}
       initial="initial"
       animate={loaded ? "loaded" : "initial"}
+      className="relative"
     >
       <Image
         src="/hero.png"
         width={790}
         height={790}
         alt="Logo Sextival"
-        objectFit="contain"
+        objectFit="cover"
         onLoadingComplete={() => setLoaded(true)}
       />
     </motion.div>
