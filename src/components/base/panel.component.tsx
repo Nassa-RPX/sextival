@@ -15,21 +15,19 @@ const Panel = (props: PanelProps) => {
     <section
       className={clsx(
         "snap-start min-w-screen min-h-screen text-gray-900 p-8 lg:p-16 flex flex-col align-center bg-red-200",
-        props.hero && "bg-cover bg-fixed bg-sex-gradient",
-        props.className
+        props.hero && "bg-cover bg-fixed bg-sex-gradient"
       )}
     >
-      <div className="flex-1 flex flex-col">{props.children}</div>
+      <div className={clsx("flex-1 flex flex-col", props.className)}>
+        {props.children}
+      </div>
       {!props.isLastOne && (
-        <div
-          className={clsx(
-            "text-red-900 font-bold mx-auto relative",
-            props.hero && "text-white"
-          )}
-        >
+        <div className={clsx("font-bold mx-auto relative")}>
           <AnimatedNassa hero={props.hero} />
           <div className="absolute w-[120px] -left-4 top-9 flex">
-            <span>Scopri di piu</span>
+            <span className={clsx(props.hero ? "text-white" : "text-red-900")}>
+              Scopri di piu
+            </span>
           </div>
         </div>
       )}

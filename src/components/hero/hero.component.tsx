@@ -7,22 +7,28 @@ import { useState } from "react";
 
 const Hero = () => {
   return (
-    <Panel hero>
+    <Panel hero className="lg:flex-row mx-auto justify-evenly">
       <HeroImage />
 
-      <span className="py-6" />
+      <div className="flex flex-col lg:justify-around">
+        <span className="py-6" />
 
-      <HeroTitle text="INTERVENTI" />
-      <HeroTitle text="ARTE" />
-      <HeroTitle text="MUSICA" />
+        <div>
+          <HeroTitle text="INTERVENTI" />
+          <HeroTitle text="ARTE" />
+          <HeroTitle text="MUSICA" />
+        </div>
 
-      <span className="py-2" />
+        <span className="py-2" />
 
-      <HeroTagline color={"text-gray-800"}>VIENI</HeroTagline>
-      <HeroTagline color={"text-white"} leading="leading-none">
-        AL FESTIVAL <br /> DELL&apos;EDUCAZIONE <br />
-        SESSUALE
-      </HeroTagline>
+        <div className="lg:mb-32">
+          <HeroTagline color={"text-gray-800"}>VIENI</HeroTagline>
+          <HeroTagline color={"text-white"} leading="leading-none">
+            AL FESTIVAL <br /> DELL&apos;EDUCAZIONE <br />
+            SESSUALE
+          </HeroTagline>
+        </div>
+      </div>
     </Panel>
   );
 };
@@ -38,7 +44,7 @@ const HeroImage = () => {
       }}
       initial="initial"
       animate={loaded ? "loaded" : "initial"}
-      className="relative"
+      className="relative lg:w-3/5"
     >
       <Image
         src="/hero.png"
