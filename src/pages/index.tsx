@@ -22,7 +22,7 @@ const Home: NextPage = () => {
 
       <main
         ref={ref}
-        className={`h-screen w-screen scroll-smooth snap-y ${snapType} overflow-y-scroll font-main`}
+        className={`h-screen w-screen scroll-smooth snap-y ${snapType} lg:snap-mandatory overflow-y-scroll `}
         onScroll={handleScroll}
       >
         <Hero />
