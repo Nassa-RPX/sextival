@@ -52,6 +52,7 @@ const HeroImage = () => {
         height={790}
         alt="Logo Sextival"
         objectFit="cover"
+        className="drop-shadow-sm"
         onLoadingComplete={() => setLoaded(true)}
       />
     </motion.div>
