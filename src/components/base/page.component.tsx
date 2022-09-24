@@ -1,6 +1,7 @@
 import { ComponentProps } from "@sextival/types/react.types";
 import clsx from "clsx";
 import Image from "next/image";
+import { BackIcon } from "../icon";
 
 interface Props extends ComponentProps {
   cover: {
@@ -23,6 +24,11 @@ const Page = (props: Props) => {
           objectFit="cover"
           className="rounded-xl"
         />
+
+        {/* TODO: add onclick functionality */}
+        <div className="absolute py-4 px-6 rounded-tl-xl rounded-br-xl bg-white">
+          <BackIcon />
+        </div>
 
         {/* TODO: choose a better color for the bg */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-600 rounded-xl rounded-b-none">

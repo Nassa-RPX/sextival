@@ -1,8 +1,10 @@
-import { MegaphoneIcon } from "./../components/icon/megaphone.icon";
 import { GridData } from "@sextival/components/grid/types";
-import { BakerIcon } from "@sextival/components/icon/baker.icon";
-import { BulbIcon } from "@sextival/components/icon/bulb.icon";
-import { PuzzleIcon } from "@sextival/components/icon/puzzle.icon";
+import {
+  BakerIcon,
+  BulbIcon,
+  PuzzleIcon,
+  MegaphoneIcon,
+} from "@sextival/components/icon";
 
 const NassaData: Array<GridData> = [
   {
