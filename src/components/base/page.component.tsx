@@ -25,8 +25,8 @@ const Page = (props: Props) => {
         />
 
         {/* TODO: choose a better color for the bg */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-400 rounded-xl rounded-b-none">
-          <h1 className="p-6 font-bold text-4xl text-center text-white drop-shadow-md">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-600 rounded-xl rounded-b-none">
+          <h1 className="py-2 px-6 lg:p-6 font-bold text-2xl lg:text-4xl text-center text-white drop-shadow-md">
             {props.title}
           </h1>
         </div>
