@@ -1,25 +1,24 @@
-import clsx from "clsx";
-import { useMemo } from "react";
-
 interface SpacerProps {
-  type: "y" | "x" | "full";
-  dimension: "sm" | "md" | "bg";
+  type?: "y" | "x" | "full";
+  dimension?: "sm" | "md" | "bg";
 }
 
 const Spacer = ({ type, dimension }: SpacerProps) => {
-  const d = useMemo(() => {
-    return dimension === "sm" ? "2" : dimension === "md" ? "4" : "6";
-  }, [dimension]);
+  if (type === "y" && dimension === "sm") return <span className="py-2" />;
+  if (type === "y" && dimension === "md") return <span className="py-4" />;
+  if (type === "y" && dimension === "bg") return <span className="py-8" />;
 
-  const t = useMemo(() => {
-    return type === "y" ? "py" : type === "x" ? "px" : "p";
-  }, [type]);
+  if (type === "x" && dimension === "sm") return <span className="py-2" />;
+  if (type === "x" && dimension === "md") return <span className="px-4" />;
+  if (type === "x" && dimension === "bg") return <span className="px-8" />;
 
-  const className = useMemo(() => {
-    return `${t}-${d}`;
-  }, [t, d]);
+  if (type === "full" && dimension === "sm") return <span className="p-2" />;
+  if (type === "full" && dimension === "md") return <span className="p-4" />;
+  if (type === "full" && dimension === "bg") return <span className="p-8" />;
 
-  return <div className={clsx(className)}></div>;
+  // this only because otherwise the Typescript linter complains
+  // that the return value may be undefined since all the returns are behind if statements
+  return <span />;
 };
 
 export default Spacer;

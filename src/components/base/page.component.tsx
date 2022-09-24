@@ -3,32 +3,41 @@ import clsx from "clsx";
 import Image from "next/image";
 
 interface Props extends ComponentProps {
-  img: {
+  cover: {
     src: string;
     alt: string;
   };
+  title: string;
 }
 
 const Page = (props: Props) => {
   return (
-    <div className="min-h-screen w-screen bg-red-200 flex flex-col text-slate-800">
-      <header className="h-40 w-full bg-sex-gradient-sm rounded-xl rounded-t-none relative">
-        <div className="h-44 w-4/5 bg-transparent absolute top-1/3 left-1/2 -translate-x-1/2">
-          <div className="h-full w-full bg-red-400 relative rounded-xl">
-            <Image
-              src={props.img.src}
-              alt={props.img.alt}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
+    <div className="min-h-screen bg-red-200 flex flex-col text-slate-800">
+      <header className="h-40 lg:h-60 w-full max-w-screen bg-sex-gradient-sm rounded-xl rounded-t-none lg:rounded-none relative" />
+
+      <div className="h-44 lg:h-80 w-4/5 lg:w-1/2 bg-transparent relative -translate-y-1/2 lg:-translate-y-1/2 mx-auto">
+        <Image
+          src={props.cover.src}
+          alt={props.cover.alt}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-xl"
+        />
+
+        {/* TODO: choose a better color for the bg */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-400 rounded-xl rounded-b-none">
+          <h1 className="p-6 font-bold text-4xl text-center text-white drop-shadow-md">
+            {props.title}
+          </h1>
         </div>
-      </header>
+      </div>
 
-      <div className="py-6"></div>
-
-      <main className={clsx("flex flex-col p-8 lg:p-16", props.className)}>
+      <main
+        className={clsx(
+          "flex flex-col p-8 lg:w-2/3 lg:mx-auto -translate-y-12 lg:-translate-y-32 pt-0",
+          props.className
+        )}
+      >
         {props.children}
       </main>
     </div>
