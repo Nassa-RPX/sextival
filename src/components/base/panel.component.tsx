@@ -14,7 +14,7 @@ const Panel = (props: PanelProps) => {
   return (
     <section
       className={clsx(
-        "snap-start min-w-screen min-h-screen text-gray-900 p-8 lg:p-16 flex flex-col align-center bg-red-200",
+        "snap-start min-w-screen min-h-screen text-gray-900 p-8 lg:py-16 lg:px-60 flex flex-col align-center bg-red-200",
         props.hero && "bg-cover bg-fixed bg-sex-gradient"
       )}
     >
