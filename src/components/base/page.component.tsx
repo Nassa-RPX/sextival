@@ -1,6 +1,7 @@
 import { ComponentProps } from "@sextival/types/react.types";
 import clsx from "clsx";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { BackIcon } from "../icon";
 
 interface Props extends ComponentProps {
@@ -12,6 +13,8 @@ interface Props extends ComponentProps {
 }
 
 const Page = (props: Props) => {
+  const router = useRouter();
+
   return (
     <div className="min-h-screen bg-red-200 flex flex-col text-slate-800">
       <header className="h-40 lg:h-60 w-full max-w-screen bg-sex-gradient-sm rounded-xl rounded-t-none lg:rounded-none relative" />
@@ -25,14 +28,18 @@ const Page = (props: Props) => {
           className="rounded-xl"
         />
 
-        {/* TODO: add onclick functionality */}
-        <div className="absolute py-4 px-6 rounded-tl-xl rounded-br-xl bg-white">
+        <div
+          className="absolute py-2 lg:py-3  px-4 lg:px-5 rounded-tl-xl rounded-br-xl bg-slate-100 hover:cursor-pointer"
+          onClick={() => {
+            router.back();
+          }}
+        >
           <BackIcon />
         </div>
 
         {/* TODO: choose a better color for the bg */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 bg-red-600 rounded-xl rounded-b-none">
-          <h1 className="py-2 px-6 lg:p-6 font-bold text-2xl lg:text-4xl text-center text-white drop-shadow-md">
+        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-slate-100 rounded-xl ">
+          <h1 className="py-2 lg:p-4 lg:px-6 px-6 font-bold text-2xl lg:text-6xl text-center text-slate-800">
             {props.title}
           </h1>
         </div>
