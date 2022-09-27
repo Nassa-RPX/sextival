@@ -13,7 +13,7 @@ const ContentData = [
   },
   {
     id: 2,
-    img: "/content/home-ospiti.png",
+    img: "/content/home-guest.png",
     text: "Lə Ospitə",
     url: "/le-ospiti",
   },
