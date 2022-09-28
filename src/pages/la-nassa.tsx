@@ -7,6 +7,7 @@ const Nassa = () => {
     <Page
       title="La Nassa"
       cover={{ src: "/content/home-nassa.png", alt: "La Nassa" }}
+      layoutId="nassa"
     >
       <Spacer type="y" dimension="md" />
       <div className="md:flex md:justify-evenly md:items-start bg-pink gap-8">

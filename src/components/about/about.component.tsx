@@ -4,18 +4,26 @@ import { Panel } from "../base";
 import { Content } from "./content.component";
 
 const ContentData = [
-  { id: 0, img: "/content/home-nassa.png", text: "La Nassa", url: "/la-nassa" },
+  {
+    id: 0,
+    img: "/content/home-nassa.png",
+    text: "La Nassa",
+    url: "/la-nassa",
+    layoutId: "nassa",
+  },
   {
     id: 1,
     img: "/content/home-sextival.png",
     text: "Il Sextival",
     url: "/il-sextival",
+    layoutId: "sextival",
   },
   {
     id: 2,
     img: "/content/home-guest.png",
     text: "Lə Ospitə",
     url: "/le-ospiti",
+    layoutId: "ospiti",
   },
 ];
 
@@ -28,7 +36,13 @@ const About = () => {
         whileInView={{ y: 0, opacity: 1 }}
       >
         {ContentData.map((c) => (
-          <Content key={c.id} img={c.img} text={c.text} url={c.url} />
+          <Content
+            key={c.id}
+            img={c.img}
+            text={c.text}
+            url={c.url}
+            layoutId={c.layoutId}
+          />
         ))}
       </motion.div>
     </Panel>

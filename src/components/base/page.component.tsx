@@ -1,8 +1,11 @@
-import { ComponentProps } from "@sextival/types/react.types";
-import clsx from "clsx";
-import Image from "next/image";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import clsx from "clsx";
+import { motion } from "framer-motion";
+
 import { BackIcon } from "../icon";
+import { ComponentProps } from "@sextival/types/react.types";
+import { fadeInUp } from "@sextival/utils/animations";
 
 interface Props extends ComponentProps {
   cover: {
@@ -10,6 +13,7 @@ interface Props extends ComponentProps {
     alt: string;
   };
   title: string;
+  layoutId?: string;
 }
 
 const Page = (props: Props) => {
@@ -19,40 +23,49 @@ const Page = (props: Props) => {
     <div className="min-h-screen bg-red-200 flex flex-col text-slate-800">
       <header className="h-40 lg:h-60 w-full max-w-screen bg-sex-gradient-sm rounded-xl rounded-t-none lg:rounded-none relative" />
 
-      <div className="h-44 lg:h-80 w-4/5 lg:w-1/2 bg-transparent relative -translate-y-1/2 lg:-translate-y-1/2 mx-auto">
-        <Image
-          src={props.cover.src}
-          alt={props.cover.alt}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-xl"
-        />
+      <motion.div layoutId={`about-animation-${props.layoutId}`}>
+        <div className="h-44 lg:h-80 w-4/5 lg:w-1/2 bg-transparent relative -translate-y-2/3 lg:-translate-y-2/3 mx-auto">
+          <Image
+            src={props.cover.src}
+            alt={props.cover.alt}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-xl"
+          />
 
-        <div
-          className="absolute py-2 lg:py-3  px-4 lg:px-5 rounded-tl-xl rounded-br-xl bg-slate-100 hover:cursor-pointer"
-          onClick={() => {
-            router.back();
-          }}
-        >
-          <BackIcon />
+          <div
+            className="absolute py-2 lg:py-3  px-4 lg:px-5 rounded-tl-xl rounded-br-xl bg-slate-100 hover:cursor-pointer"
+            onClick={() => {
+              router.back();
+            }}
+          >
+            <BackIcon />
+          </div>
+
+          {/* TODO: choose a better color for the bg */}
+          <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 ">
+            <h1 className="text-center text-3xl lg:text-5xl font-bold text-white drop-shadow-lg">
+              {props.title}
+            </h1>
+          </div>
         </div>
+      </motion.div>
 
-        {/* TODO: choose a better color for the bg */}
-        <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-slate-100 rounded-xl ">
-          <h1 className="py-2 lg:p-4 lg:px-6 px-6 font-bold text-2xl lg:text-6xl text-center text-slate-800">
-            {props.title}
-          </h1>
-        </div>
-      </div>
-
-      <main
-        className={clsx(
-          "flex flex-col p-8 lg:w-2/3 lg:mx-auto -translate-y-12 lg:-translate-y-32 pt-0",
-          props.className
-        )}
+      <motion.main
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={fadeInUp}
       >
-        {props.children}
-      </main>
+        <section
+          className={clsx(
+            "flex flex-col p-8 lg:w-2/3 lg:mx-auto -translate-y-12 lg:-translate-y-40 pt-0",
+            props.className
+          )}
+        >
+          {props.children}
+        </section>
+      </motion.main>
     </div>
   );
 };
