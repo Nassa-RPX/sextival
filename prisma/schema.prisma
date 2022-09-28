@@ -64,3 +64,13 @@ model VerificationToken {
 
     @@unique([identifier, token])
 }
+
+model Guest {
+    id String    @id @default(cuid())
+    name String  @unique
+    description String
+    social String?
+    image String?
+
+    // TODO: add talks relationship(?)
+}
