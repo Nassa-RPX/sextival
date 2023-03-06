@@ -1,8 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import useMainScroll from "@sextival/hooks/use-main-scroll";
-
 import { Panel } from "@sextival/components/base";
 
 // sections
@@ -10,8 +8,6 @@ import Hero from "@sextival/components/hero";
 import About from "@sextival/components/about";
 
 const Home: NextPage = () => {
-  const { ref, snapType, handleScroll } = useMainScroll();
-
   return (
     <>
       <Head>
@@ -21,9 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main
-        ref={ref}
-        className={`h-screen w-screen scroll-smooth snap-y ${snapType} lg:snap-mandatory overflow-y-scroll `}
-        onScroll={handleScroll}
+        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll `}
       >
         <Hero />
         <About />
