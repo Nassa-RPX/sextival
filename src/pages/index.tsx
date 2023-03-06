@@ -1,11 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { Panel } from "@sextival/components/base";
-
 // sections
-import Hero from "@sextival/components/hero";
-import About from "@sextival/components/about";
+import { Header } from "@sextival/components/header";
+import Radials from "@sextival/components/radials";
 
 const Home: NextPage = () => {
   return (
@@ -17,13 +15,11 @@ const Home: NextPage = () => {
       </Head>
 
       <main
-        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll `}
+        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll bg-red-50 px-2 lg:px-44 relative`}
       >
-        <Hero />
-        <About />
-        <Panel>3</Panel>
-        <Panel>4</Panel>
-        <Panel isLastOne>5</Panel>
+        <Radials />
+        <Header />
+        main
       </main>
     </>
   );
