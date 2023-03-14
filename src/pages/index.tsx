@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main
-        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll bg-red-50 px-2 lg:px-28 relative`}
+        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll bg-sex-red-0 px-2 lg:px-36 relative`}
       >
         <Radials />
         <Header />

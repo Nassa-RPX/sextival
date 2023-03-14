@@ -1,7 +1,6 @@
-import { BackIcon } from "./back.icon";
-import { BakerIcon } from "./baker.icon";
-import { BulbIcon } from "./bulb.icon";
-import { MegaphoneIcon } from "./megaphone.icon";
-import { PuzzleIcon } from "./puzzle.icon";
-
-export { BackIcon, BakerIcon, BulbIcon, MegaphoneIcon, PuzzleIcon };
+export { BackIcon } from "./back.icon";
+export { BakerIcon } from "./baker.icon";
+export { BulbIcon } from "./bulb.icon";
+export { MegaphoneIcon } from "./megaphone.icon";
+export { PuzzleIcon } from "./puzzle.icon";
+export { DownIcon } from "./down.icon";
