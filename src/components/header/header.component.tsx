@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useState } from "react";
 import { DownIcon } from "../icon";
+import { motion} from 'framer-motion';
 
 type Pages = Array<{
   label: string;
@@ -25,7 +26,7 @@ export const Header = () => {
   const [selected, setSelected] = useState(false);
 
   return (
-    <div className="my-4 lg:my-8 flex justify-between items-center">
+    <motion.div className="my-4 lg:my-8 flex justify-between items-center" initial={{y:-100, opacity: 0}} animate={{y:0, opacity: 1}}>
       <h1 className="text-2xl lg:text-4xl font-black text-sex-blue">
         SEXTIVAL
       </h1>
@@ -67,6 +68,6 @@ export const Header = () => {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 };
