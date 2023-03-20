@@ -1,8 +1,9 @@
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { DownIcon } from "../icon";
-import { motion} from 'framer-motion';
+import { motion, Variants } from "framer-motion";
+import useScroll from "@sextival/hooks/use-scroll";
 
 type Pages = Array<{
   label: string;
@@ -22,11 +23,32 @@ const PAGES: Pages = [
   { label: "PARTNER", link: "/partner" },
 ];
 
+const variants: Variants = {
+  base: {
+    y: 0,
+    opacity: 1,
+  },
+  scrolled: {
+    y: 10,
+    opacity: 1,
+  },
+};
+
 export const Header = () => {
   const [selected, setSelected] = useState(false);
+  const scroll = useScroll();
+  const isScrolled = useMemo(() => scroll.y > 300, [scroll]);
 
   return (
-    <motion.div className="my-4 lg:my-8 flex justify-between items-center" initial={{y:-100, opacity: 0}} animate={{y:0, opacity: 1}}>
+    <motion.div
+      className={clsx(
+        "fixed lg:w-3/4 h-[60px] flex items-center px-8 flex justify-between items-center transition-colors z-50 rounded-md",
+        isScrolled && "bg-sex-red-4 bg-opacity-75 backdrop-blur-md",
+      )}
+      variants={variants}
+      initial={{ y: -100, opacity: 0 }}
+      animate={isScrolled ? "scrolled" : "base"}
+    >
       <h1 className="text-2xl lg:text-4xl font-black text-sex-blue">
         SEXTIVAL
       </h1>
@@ -53,7 +75,7 @@ export const Header = () => {
                       "absolute top-[110%] right-[50%] translate-x-1/2 min-w-[200px] px-8 py-4 bg-white transition-opacity rounded-lg bg-opacity-30 font-normal shadow-sex flex flex-col flex-nowrap",
                       selected
                         ? "opacity-100 pointer-events-auto"
-                        : "opacity-0 pointer-events-none"
+                        : "opacity-0 pointer-events-none",
                     )}
                   >
                     {subLinks.map((sub) => (

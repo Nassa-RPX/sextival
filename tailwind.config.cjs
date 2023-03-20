@@ -28,6 +28,10 @@ module.exports = {
       boxShadow: {
         sex: "0px 4px 4px rgba(245, 0, 44, 0.06)",
       },
+
+      fontSize: {
+        
+      }
     },
   },
   plugins: [

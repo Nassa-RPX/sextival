@@ -3,7 +3,7 @@ import Head from "next/head";
 
 // sections
 import { Header } from "@sextival/components/header";
-import Radials from "@sextival/components/radials";
+import Hero from "@sextival/components/hero";
 
 const Home: NextPage = () => {
   return (
@@ -14,13 +14,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <main
-        className={`h-screen w-screen scroll-smooth snap-y snap-mandatory overflow-y-scroll bg-sex-red-0 px-2 lg:px-36 relative`}
-      >
-        <Radials />
-        <Header />
-        main
-      </main>
+      
+      <Header />
+      <Hero />
+      main
     </>
   );
 };

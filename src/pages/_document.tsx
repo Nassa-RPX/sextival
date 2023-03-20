@@ -13,9 +13,9 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="font-main">
-          <Main />
-          <NextScript />
+        <body className="min-h-screen bg-sex-red-0 font-main">
+            <Main />
+            <NextScript />
         </body>
       </Html>
     );
