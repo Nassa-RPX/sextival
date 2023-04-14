@@ -1,27 +1,13 @@
+import React, { useMemo, useState } from "react";
+import { motion, Variants } from "framer-motion";
 import clsx from "clsx";
 import Link from "next/link";
-import React, { useEffect, useMemo, useState } from "react";
-import { DownIcon } from "../icon";
-import { motion, Variants } from "framer-motion";
+
+import { PAGES } from "@sextival/data";
 import useScroll from "@sextival/hooks/use-scroll";
 
-type Pages = Array<{
-  label: string;
-  link?: string;
-  subLinks?: Array<{ label: string; link: string }>;
-}>;
-
-const PAGES: Pages = [
-  {
-    label: "CHI SIAMO",
-    subLinks: [
-      { label: "Il Sextival", link: "/il-sextival" },
-      { label: "Edizione 2022", link: "/edizione-2022" },
-    ],
-  },
-  { label: "LA NASSA", link: "/la-nassa" },
-  { label: "PARTNER", link: "/partner" },
-];
+import { DownIcon, MenuIcon } from "../icon";
+import { NavDrawer } from "./nav-drawer.component";
 
 const variants: Variants = {
   base: {
@@ -39,57 +25,79 @@ export const Header = () => {
   const scroll = useScroll();
   const isScrolled = useMemo(() => scroll.y > 300, [scroll]);
 
+  const [openNav, setOpenNav] = useState(false);
+
   return (
-    <motion.div
-      className={clsx(
-        "fixed lg:w-3/4 h-[60px] flex items-center px-8 flex justify-between items-center transition-colors z-50 rounded-md",
-        isScrolled && "bg-sex-red-4 bg-opacity-75 backdrop-blur-md",
-      )}
-      variants={variants}
-      initial={{ y: -100, opacity: 0 }}
-      animate={isScrolled ? "scrolled" : "base"}
-    >
-      <h1 className="text-2xl lg:text-4xl font-black text-sex-blue">
-        SEXTIVAL
-      </h1>
-      <div className="flex gap-8 text-sex-blue font-bold text-md">
-        {PAGES.map(({ label, link, subLinks }) => {
-          return (
-            <>
-              {link && (
-                <Link href={link} key={link}>
-                  {label}
-                </Link>
-              )}
-              {subLinks && (
-                <div className="relative">
-                  <div
-                    className="flex items-center cursor-pointer relative"
-                    onClick={() => setSelected(!selected)}
-                  >
-                    <span>{label}</span>
-                    <DownIcon />
+    <>
+      <motion.div
+        className={clsx(
+          "fixed left-0 right-0 h-[60px] mx-[5%] px-[5%] lg:mx-[10%] lg:px-8 flex justify-between items-center transition-colors z-10 rounded-md",
+          isScrolled &&
+            "bg-sex-red-4 lg:bg-sex-red-0 bg-opacity-50 lg:bg-opacity-75 backdrop-blur-md ",
+        )}
+        variants={variants}
+        initial={{ y: -100, opacity: 0 }}
+        animate={isScrolled ? "scrolled" : "base"}
+      >
+        <h1 className="text-2xl lg:text-4xl font-black text-sex-blue">
+          SEXTIVAL
+        </h1>
+
+        <div
+          onClick={() => {
+            setOpenNav(true);
+          }}
+          className="lg:hidden cursor-pointer"
+        >
+          <MenuIcon className="w-6 h-6 text-sex-blue" />
+        </div>
+
+        <div className="hidden lg:flex gap-8 text-sex-blue font-bold text-md">
+          {PAGES.map(({ label, link, subLinks }) => {
+            return (
+              <>
+                {link && (
+                  <Link href={link} key={link}>
+                    {label}
+                  </Link>
+                )}
+                {subLinks && (
+                  <div className="relative">
+                    <div
+                      className="flex items-center cursor-pointer relative"
+                      onClick={() => setSelected(!selected)}
+                    >
+                      <span>{label}</span>
+                      <DownIcon />
+                    </div>
+                    <div
+                      className={clsx(
+                        "absolute top-[110%] right-[50%] translate-x-1/2 min-w-[200px] px-8 py-4 bg-white transition-opacity rounded-lg bg-opacity-30 font-normal shadow-sex flex flex-col flex-nowrap",
+                        selected
+                          ? "opacity-100 pointer-events-auto"
+                          : "opacity-0 pointer-events-none",
+                      )}
+                    >
+                      {subLinks.map((sub) => (
+                        <div key={sub.link}>
+                          <Link href={sub.link}>{sub.label}</Link>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <div
-                    className={clsx(
-                      "absolute top-[110%] right-[50%] translate-x-1/2 min-w-[200px] px-8 py-4 bg-white transition-opacity rounded-lg bg-opacity-30 font-normal shadow-sex flex flex-col flex-nowrap",
-                      selected
-                        ? "opacity-100 pointer-events-auto"
-                        : "opacity-0 pointer-events-none",
-                    )}
-                  >
-                    {subLinks.map((sub) => (
-                      <div key={sub.link}>
-                        <Link href={sub.link}>{sub.label}</Link>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
-          );
-        })}
-      </div>
-    </motion.div>
+                )}
+              </>
+            );
+          })}
+        </div>
+      </motion.div>
+
+      <NavDrawer
+        open={openNav}
+        onClose={() => {
+          setOpenNav(false);
+        }}
+      />
+    </>
   );
 };

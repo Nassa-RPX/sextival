@@ -2,11 +2,11 @@ import { GridData } from "@sextival/components/grid/types";
 import {
   BakerIcon,
   BulbIcon,
-  PuzzleIcon,
   MegaphoneIcon,
+  PuzzleIcon,
 } from "@sextival/components/icon";
 
-const NassaData: Array<GridData> = [
+export const NASSA: Array<GridData> = [
   {
     icon: BakerIcon,
     title: "Incontro ed ascolto",
@@ -33,4 +33,4 @@ const NassaData: Array<GridData> = [
   },
 ];
 
-export default NassaData;
+export default NASSA;

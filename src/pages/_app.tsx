@@ -14,7 +14,7 @@ const MyApp: AppType = ({
   return (
     <SessionProvider session={session}>
       <AnimatePresence mode="wait">
-        <main className="min-h-screen max-w-screen flex flex-col w-3/4 mx-auto">
+        <main className="min-h-screen max-w-screen flex flex-col w-[90%] lg:w-3/4 mx-auto">
           <Component {...pageProps} />
         </main>
       </AnimatePresence>
