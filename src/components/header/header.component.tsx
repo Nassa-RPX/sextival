@@ -8,6 +8,7 @@ import useScroll from "@sextival/hooks/use-scroll";
 
 import { DownIcon, MenuIcon } from "../icon";
 import { NavDrawer } from "./nav-drawer.component";
+import { useMediaQuery } from "@sextival/hooks";
 
 const variants: Variants = {
   base: {
@@ -23,7 +24,14 @@ const variants: Variants = {
 export const Header = () => {
   const [selected, setSelected] = useState(false);
   const scroll = useScroll();
-  const isScrolled = useMemo(() => scroll.y > 300, [scroll]);
+  const isDesktop = useMediaQuery("lg");
+  const scrollThreshold = useMemo(() => isDesktop ? 200 : 50, [isDesktop]);
+  const isScrolled = useMemo(() => scroll.y > scrollThreshold, [
+    scroll,
+    scrollThreshold,
+  ]);
+
+  console.log("isssss", isDesktop, scrollThreshold, isScrolled);
 
   const [openNav, setOpenNav] = useState(false);
 
