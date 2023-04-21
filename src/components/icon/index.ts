@@ -6,3 +6,5 @@ export { PuzzleIcon } from "./puzzle.icon";
 export { DownIcon } from "./down.icon";
 export { MenuIcon } from "./menu.icon";
 export { RoundedCloseIcon } from "./rounded-close.icon";
+export { NetIcon } from "./net.icon";
+export { GroupIcon } from "./group.icon";

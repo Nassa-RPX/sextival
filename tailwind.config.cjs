@@ -19,7 +19,7 @@ module.exports = {
         "sex-gradient":
           "linear-gradient(180deg, #2B2659 0%, #DF566B 65.1%, #DC3B49 100%)",
         "sex-gradient-sm": "linear-gradient(180deg, #2B2659 0%, #DF566B 100%)",
-
+        "sex-gradient-text": "linear-gradient(91.32deg, #2B2659 -7.54%, #DF566B 58.82%, #DC3B49 121.47%)",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
       },
       fontFamily: {

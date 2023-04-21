@@ -8,7 +8,7 @@ import useScroll from "@sextival/hooks/use-scroll";
 
 import { DownIcon, MenuIcon } from "../icon";
 import { NavDrawer } from "./nav-drawer.component";
-import { useMediaQuery } from "@sextival/hooks";
+import { useMediaQuery, useScrollLock } from "@sextival/hooks";
 
 const variants: Variants = {
   base: {
@@ -31,7 +31,7 @@ export const Header = () => {
     scrollThreshold,
   ]);
 
-  console.log("isssss", isDesktop, scrollThreshold, isScrolled);
+  const { lock } = useScrollLock(false);
 
   const [openNav, setOpenNav] = useState(false);
 
@@ -53,6 +53,7 @@ export const Header = () => {
 
         <div
           onClick={() => {
+            lock(true);
             setOpenNav(true);
           }}
           className="lg:hidden cursor-pointer"
@@ -103,6 +104,7 @@ export const Header = () => {
       <NavDrawer
         open={openNav}
         onClose={() => {
+          lock(false);
           setOpenNav(false);
         }}
       />

@@ -1,5 +1,6 @@
-import { PAGES } from "@sextival/data";
 import Link from "next/link";
+
+import { PAGES } from "@sextival/data";
 import { Drawer } from "../drawer";
 
 interface Props {
@@ -11,7 +12,9 @@ export const NavDrawer = ({ open, onClose }: Props) => {
   return (
     <Drawer
       open={open}
-      onClose={onClose}
+      onClose={() => {
+        onClose();
+      }}
       className="lg:hidden flex flex-col"
       title="Navigazione"
     >
