@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import { PropsWithChildren } from "react";
 
-interface Props extends PropsWithChildren {
-  className?: string;
-}
+import { DefaultProps } from "@sextival/types";
+
+interface Props extends DefaultProps {}
 
 export const Section = ({ children, className }: Props) => {
   return (

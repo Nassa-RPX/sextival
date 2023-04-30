@@ -5,7 +5,7 @@ import { HeroCta } from "./hero-cta.component";
 const HeroNew = () => {
   return (
     <div className="w-full h-full relative">
-      <Radials />
+       <Radials />
 
       <div className="h-screen relative flex-1 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:justify-center  order-2 lg:order-1">
@@ -25,9 +25,9 @@ const HeroNew = () => {
 
           <HeroCta />
         </div>
-        <div className="flex items-center justify-center lg:justify-end lg:flex-1 mt-[80px] lg:mt-0 order-1 lg:order-2">
-          <Image src="/hero-blog.png" width={531} height={475} />
-        </div>
+         <div className="flex items-center justify-center lg:justify-end lg:flex-1 mt-[80px] lg:mt-0 order-1 lg:order-2">
+           <Image src="/hero-blog.png" width={531} height={475} />
+         </div>
       </div>
     </div>
   );

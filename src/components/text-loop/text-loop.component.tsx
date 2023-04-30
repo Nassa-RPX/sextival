@@ -5,9 +5,10 @@ import clsx from "clsx";
 interface Props {
   texts: Array<string>;
   className?: string;
+  transition?: number;
 }
 
-export const TextLoop = ({ texts, className }: Props) => {
+export const TextLoop = ({ texts, transition,  className }: Props) => {
   const variants: Variants = useMemo(() => ({
     enter: () => {
       return {
@@ -31,14 +32,16 @@ export const TextLoop = ({ texts, className }: Props) => {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
+    const t = transition || 1;
+    
     setTimeout(() => {
       let next = index + 1;
       if (next === texts.length) {
         next = 0;
       }
       setIndex(next);
-    }, 3 * 1000);
-  }, [index, setIndex]);
+    }, t * 1000);
+  }, [index, setIndex, transition]);
 
   return (
     <AnimatePresence>

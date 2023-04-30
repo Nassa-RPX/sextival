@@ -3,3 +3,7 @@ export { default as useScroll } from "./use-scroll";
 export { default as useMainScroll } from "./use-main-scroll";
 export { useMediaQuery } from "./use-media-query";
 export { useScrollLock } from "./use-scroll-lock";
+export { useTimeout } from "./use-timeout";
+export { useEventListener } from "./use-event-listener";
+export { useHover } from "./use-hover";
+export { useDebounce } from "./use-debounce";

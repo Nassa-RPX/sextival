@@ -5,6 +5,7 @@ import Head from "next/head";
 import { Header } from "@sextival/components/header";
 import Hero from "@sextival/components/hero";
 import { SextivalIs } from "@sextival/sections/sextival-is";
+import { SextivalTeam } from "@sextival/sections/sextival-team";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
       <Header />
       <Hero />
       <SextivalIs />
+      <SextivalTeam />
     </>
   );
 };

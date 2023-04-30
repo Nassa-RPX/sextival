@@ -12,10 +12,14 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap"
+            rel="stylesheet"
+          />
         </Head>
-        <body className="min-h-screen bg-sex-red-0 font-main">
-            <Main />
-            <NextScript />
+        <body className="min-h-screen max-w-screen bg-sex-red-0 font-main overflow-x-hidden">
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

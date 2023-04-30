@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { Fragment, useMemo, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import clsx from "clsx";
 import Link from "next/link";
@@ -53,6 +53,7 @@ export const Header = () => {
 
         <div
           onClick={() => {
+            console.log("hello");
             lock(true);
             setOpenNav(true);
           }}
@@ -64,7 +65,7 @@ export const Header = () => {
         <div className="hidden lg:flex gap-8 text-sex-blue font-bold text-md">
           {PAGES.map(({ label, link, subLinks }) => {
             return (
-              <>
+              <Fragment key={label}>
                 {link && (
                   <Link href={link} key={link}>
                     {label}
@@ -95,7 +96,7 @@ export const Header = () => {
                     </div>
                   </div>
                 )}
-              </>
+              </Fragment>
             );
           })}
         </div>
