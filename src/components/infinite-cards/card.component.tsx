@@ -32,12 +32,14 @@ export const Card = (
     transition={{ ease: [.6, .05, -.01, .9] }}
     whileTap={{ scale: .85 }}
   >
-    <div className="px-8 py-4 w-full h-full max-h-[400px] flex flex-col pointer-events-none items-center gap-4">
+    <div className="px-8 py-4 w-full h-full max-h-[400px] flex flex-col pointer-events-none items-center gap-4 relative">
       <img
         src={card.img!}
         className="pointer-events-none object-contain h-full"
       />
-      <div>{card.name}</div>
+      <div className="absolute w-full h-[80px] flex items-center justify-center bg-transparent rounded-b-md bottom-0">
+        {card.name}
+      </div>
     </div>
   </motion.div>
 );

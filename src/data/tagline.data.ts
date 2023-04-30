@@ -1,1 +1,1 @@
-export const TAGLINE = ["Educativo", "Instagram", "Prova", "Qualcosa", "Divertente", "Musica", "Ecc"]
+export const TAGLINE = ["Educativo", "Comunità", "Libero", "Inclusione", "Curiosità", "Emozionante", "Connessioni"]
