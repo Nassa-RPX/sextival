@@ -4,5 +4,4 @@ export interface DefaultProps extends PropsWithChildren {
   className?: string;
 }
 
-
-export interface Icon extends JSX.Element {}
+export type Icon = JSX.Element;

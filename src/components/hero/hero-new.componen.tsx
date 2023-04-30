@@ -18,7 +18,7 @@ const HeroNew = () => {
           <h1 className="text-3xl lg:text-[60px] text-sex-red-4 font-bold leading-none">
             AL FESTIVAL
             <br />
-            DELL'EDUCAZIONE
+            DELL&apos;EDUCAZIONE
             <br />
             SESSUALE
           </h1>

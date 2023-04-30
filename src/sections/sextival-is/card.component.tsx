@@ -1,7 +1,7 @@
 import { DefaultProps } from "@sextival/types";
 import clsx from "clsx";
 
-interface Props extends DefaultProps {}
+type Props = DefaultProps;
 
 const Root = ({ children, className }: Props) => {
   return (

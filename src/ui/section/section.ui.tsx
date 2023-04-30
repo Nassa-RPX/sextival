@@ -3,9 +3,7 @@ import clsx from "clsx";
 
 import { DefaultProps } from "@sextival/types";
 
-interface Props extends DefaultProps {}
-
-export const Section = ({ children, className }: Props) => {
+export const Section = ({ children, className }: DefaultProps) => {
   return (
     <motion.section
       initial={{ opacity: 0, y: 50 }}
