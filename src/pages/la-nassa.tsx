@@ -1,20 +1,15 @@
-import { Page, Spacer } from "@sextival/components/base";
 import Grid from "@sextival/components/grid";
-import NassaData from "@sextival/data/nassa.data";
+import { NASSA } from "@sextival/data";
+import { Spacer } from "@sextival/ui/spacer";
 
 const Nassa = () => {
   return (
-    <Page
-      title="La Nassa"
-      cover={{ src: "/content/home-nassa.png", alt: "La Nassa" }}
-      layoutId="nassa"
-    >
-      <Spacer type="y" dimension="md" />
+    <div className="flex flex-col">
       <div className="md:flex md:justify-evenly md:items-start bg-pink gap-8">
         <p className="md:py-0 md:basis-1/2 xl:basis-1/3 text-md md:text-xl  text-justify">
-          Il progetto Nassa nasce nel 2019 a <strong>Sestri Levante</strong>,
-          per poi espandersi anche a <strong>Chiavari</strong> l’anno
-          successivo.
+          Il progetto Nassa nasce nel 2019 a{" "}
+          <strong>Sestri Levante</strong>, per poi espandersi anche a{" "}
+          <strong>Chiavari</strong> l’anno successivo.
         </p>
 
         <p className="mt-2 md:mt-0 md:py-0 md:basis-1/2 xl:basis-1/3 text-md  md:text-xl  text-justify">
@@ -38,17 +33,13 @@ const Nassa = () => {
         proporre, inventare, immaginare, creare e essere ascoltati.
       </p>
 
-      <Spacer type="y" dimension="sm" />
-
       <p className="text-right lg:text-center ">
         A partire da questa idea originaria la nostra esperienza ci ha portato a
         capire che:
       </p>
 
-      <Spacer type="y" dimension="bg" />
-
-      <Grid data={NassaData} />
-    </Page>
+      <Grid data={NASSA} />
+    </div>
   );
 };
 
