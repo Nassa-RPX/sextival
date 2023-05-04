@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 // sections
-import { Header } from "@sextival/components/header";
 import Hero from "@sextival/components/hero";
 import { SextivalIs } from "@sextival/sections/sextival-is";
 import { SextivalTeam } from "@sextival/sections/sextival-team";
@@ -16,7 +15,6 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
       <Hero />
       <SextivalIs />
       <SextivalTeam />

@@ -54,7 +54,6 @@ export const InfiniteCards = (props: Props) => {
     0,
   ]);
   
-  console.log('drag', dragStart)
 
   const boxShadow =
     useMotionTemplate`0 ${shadowBlur}px 25px -5px rgba(159, 82, 95, ${shadowOpacity})`;
@@ -88,7 +87,6 @@ export const InfiniteCards = (props: Props) => {
   };
 
   const renderCards = () => {
-    console.log("rendering", cards);
     return cards.map((card, index) => {
       if (index === cards.length - 1) {
         return (

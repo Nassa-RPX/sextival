@@ -9,6 +9,7 @@ import useScroll from "@sextival/hooks/use-scroll";
 import { DownIcon, MenuIcon } from "../icon";
 import { NavDrawer } from "./nav-drawer.component";
 import { useMediaQuery, useScrollLock } from "@sextival/hooks";
+import { Dropdown } from "../dropdown/dropdown.component";
 
 const variants: Variants = {
   base: {
@@ -22,7 +23,7 @@ const variants: Variants = {
 };
 
 export const Header = () => {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState<string | undefined>(undefined);
   const scroll = useScroll();
   const isDesktop = useMediaQuery("lg");
   const scrollThreshold = useMemo(() => isDesktop ? 200 : 50, [isDesktop]);
@@ -47,13 +48,14 @@ export const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={isScrolled ? "scrolled" : "base"}
       >
-        <h1 className="text-2xl lg:text-4xl font-black text-sex-blue">
-          SEXTIVAL
-        </h1>
+        <Link href="/">
+          <a className="text-2xl lg:text-4xl font-black text-sex-blue">
+            SEXTIVAL
+          </a>
+        </Link>
 
         <div
           onClick={() => {
-            console.log("hello");
             lock(true);
             setOpenNav(true);
           }}
@@ -75,25 +77,22 @@ export const Header = () => {
                   <div className="relative">
                     <div
                       className="flex items-center cursor-pointer relative"
-                      onClick={() => setSelected(!selected)}
+                      onClick={() => {
+                        selected === label
+                          ? setSelected(undefined)
+                          : setSelected(label);
+                      }}
                     >
                       <span>{label}</span>
-                      <DownIcon />
+                      <DownIcon selected={selected === label} />
                     </div>
-                    <div
-                      className={clsx(
-                        "absolute top-[110%] right-[50%] translate-x-1/2 min-w-[200px] px-8 py-4 bg-white transition-opacity rounded-lg bg-opacity-30 font-normal shadow-sex flex flex-col flex-nowrap",
-                        selected
-                          ? "opacity-100 pointer-events-auto"
-                          : "opacity-0 pointer-events-none",
-                      )}
-                    >
+                    <Dropdown isSelected={selected === label}>
                       {subLinks.map((sub) => (
                         <div key={sub.link}>
                           <Link href={sub.link}>{sub.label}</Link>
                         </div>
                       ))}
-                    </div>
+                    </Dropdown>
                   </div>
                 )}
               </Fragment>

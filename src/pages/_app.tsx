@@ -6,6 +6,7 @@ import superjson from "superjson";
 import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
 import { AnimatePresence } from "framer-motion";
+import { Header } from "@sextival/components/header";
 
 const MyApp: AppType = ({
   Component,
@@ -15,6 +16,8 @@ const MyApp: AppType = ({
     <SessionProvider session={session}>
       <AnimatePresence mode="wait">
         <main className="min-h-screen max-w-screen flex flex-col w-[90%] lg:w-3/4 mx-auto">
+          <Header />
+
           <Component {...pageProps} />
         </main>
       </AnimatePresence>
