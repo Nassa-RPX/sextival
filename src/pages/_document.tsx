@@ -17,7 +17,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="min-h-screen max-w-screen bg-sex-red-0 font-main overflow-x-hidden">
+        <body className="min-h-screen max-w-screen bg-sex-blue-0 font-main overflow-x-hidden">
           <Main />
           <NextScript />
         </body>

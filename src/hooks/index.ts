@@ -7,3 +7,4 @@ export { useTimeout } from "./use-timeout";
 export { useEventListener } from "./use-event-listener";
 export { useHover } from "./use-hover";
 export { useDebounce } from "./use-debounce";
+export { useOnClickOutside } from "./use-on-click-outside";
