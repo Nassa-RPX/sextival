@@ -8,7 +8,7 @@ interface Props extends DefaultProps {
 
 export const Page = ({ children, className, title }: Props) => {
   return (
-    <div className={clsx("flex flex-col lg:w-4/5 lg:mx-auto ", className)}>
+    <div className={clsx("flex flex-col", className)}>
       <div className="mt-[60px] h-[100px] flex items-center justify-center">
         <Heading order={1} className="text-sex-red-4 text-4xl lg:text-6xl">
           {title}

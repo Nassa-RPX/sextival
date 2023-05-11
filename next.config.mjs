@@ -16,4 +16,7 @@ export default defineNextConfig({
   reactStrictMode: true,
   swcMinify: true,
   output: "standalone",
+  images: {
+    domains: ["pub-017f84a06d12468b8456a49acac6a458.r2.dev"],
+  },
 });

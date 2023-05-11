@@ -11,6 +11,7 @@ import { NavDrawer } from "./nav-drawer.component";
 import {
   useMediaQuery,
   useOnClickOutside,
+  useOnRouterChange,
   useScrollLock,
 } from "@sextival/hooks";
 import { Dropdown } from "../dropdown/dropdown.component";
@@ -35,12 +36,12 @@ export const Header = () => {
     scroll,
     scrollThreshold,
   ]);
-
   const ref = useRef<HTMLDivElement | null>(null);
+
+  useOnRouterChange(() => isDesktop && selected && setSelected(undefined));
   useOnClickOutside(ref, () => {
     isDesktop && selected && setSelected(undefined);
   });
-
   const { lock } = useScrollLock(false);
 
   const [openNav, setOpenNav] = useState(false);
