@@ -31,7 +31,7 @@ export const Header = () => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   const scroll = useScroll();
   const isDesktop = useMediaQuery("lg");
-  const scrollThreshold = useMemo(() => isDesktop ? 200 : 50, [isDesktop]);
+  const scrollThreshold = useMemo(() => 50, [isDesktop]);
   const isScrolled = useMemo(() => scroll.y > scrollThreshold, [
     scroll,
     scrollThreshold,
