@@ -12,7 +12,7 @@ export const RoundedCloseIcon = ({ className, onClick }: IconProps) => (
     fill="none"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={clsx(defaultClassName, "cursor-pointer", className)}
+    className={clsx("cursor-pointer", className)}
   >
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path

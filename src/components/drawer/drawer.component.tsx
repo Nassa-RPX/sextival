@@ -31,7 +31,7 @@ export const Drawer = (
 
   const defaultClassName = useMemo(
     () =>
-      "fixed z-20 w-screen top-0 left-0 bottom-0 right-0 bg-sex-red-2 bg-opacity-90 backdrop-blur-md p-8",
+      "fixed z-20 w-screen top-0 left-0 bottom-0 right-0 bg-sex-blue-2 bg-opacity-70 backdrop-blur-lg p-8",
     [],
   );
 
@@ -47,11 +47,11 @@ export const Drawer = (
         open ? "opacity-100" : "opacity-0",
       )}
     >
-      <div className="flex items-center justify-between">
-        {title && <span className="font-bold">{title}</span>}
+      <div className="flex items-center justify-between mb-6">
+        {title && <span className="font-bold text-2xl">{title}</span>}
         <RoundedCloseIcon
           onClick={onClose}
-          className="h-6 w-6 text-sex-red-6"
+          className="h-6 w-6 text-sex-blue-6"
         />
       </div>
       {children}

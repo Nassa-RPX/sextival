@@ -8,3 +8,4 @@ export { MenuIcon } from "./menu.icon";
 export { RoundedCloseIcon } from "./rounded-close.icon";
 export { NetIcon } from "./net.icon";
 export { GroupIcon } from "./group.icon";
+export { RightIcon } from "./right.icon";

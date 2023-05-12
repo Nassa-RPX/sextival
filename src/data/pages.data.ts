@@ -20,7 +20,6 @@ export const PAGES: Pages = [
       { label: "Lə Ospitə", link: "edizioni/2023/ospiti" },
     ],
   },
-  { label: "PARTNER", link: "/partner" },
   {
     label: "CASSETTA DEGLI ATTREZZI",
     subLinks: [
@@ -28,4 +27,6 @@ export const PAGES: Pages = [
       { label: "La Cassetta", link: "/cassetta/la-cassetta" },
     ],
   },
+
+  { label: "PARTNER", link: "/partner" },
 ];
