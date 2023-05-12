@@ -4,14 +4,14 @@ import { Page } from "@sextival/ui/page";
 import { Section } from "@sextival/ui/section";
 import { Heading } from "@sextival/ui/heading";
 
-import { Grid2022 } from "@sextival/sections/2022-grid";
+import { Grid } from "@sextival/sections/2022/grid";
 import { Gallery } from "@sextival/sections/2022/gallery";
 import { Sponsor } from "@sextival/sections/2022/sponsor";
 
 const Edizione2022: NextPage = () => {
   return (
     <Page title="EDIZIONE 2022" className="gap-2">
-      <Grid2022 />
+      <Grid />
 
       <Section className="gap-1 lg:w-3/4 lg:text-lg">
         <Heading order={2} className="text-2xl">COSA ABBIAMO IMPARATO</Heading>
@@ -27,8 +27,9 @@ const Edizione2022: NextPage = () => {
           </p>
           <p>
             Due giorni di incontri, interventi di alto livello e tanti spunti di
-            riflessione organizzati dall’Associazione Nassa di Rapallo. Ecco
-            alcune parole chiave che racchiudono ciò di cui abbiamo parlato.
+            riflessione organizzati dall&apos;Associazione Nassa di Rapallo.
+            Ecco alcune parole chiave che racchiudono ciò di cui abbiamo
+            parlato.
           </p>
         </div>
         <a
@@ -38,7 +39,7 @@ const Edizione2022: NextPage = () => {
           Leggi il bellissimo articolo di Wall:out!
         </a>
         <span className="opacity-50 text-sm">
-          Vi ruberemo l'idea per i prossimi anni
+          Vi ruberemo l&apos;idea per i prossimi anni
         </span>
       </Section>
 

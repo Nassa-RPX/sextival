@@ -10,7 +10,7 @@ export const Sponsor = () => {
 
       <div className="mt-4 flex overflow-x-hidden gap-4 items-center">
         {SPONSOR.map((sp) => (
-          <div className="relative h-[100px] w-full">
+          <div key={sp} className="relative h-[100px] w-full">
             <Image src={sp} layout="fill" objectFit="contain" />
           </div>
         ))}

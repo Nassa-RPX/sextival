@@ -1,9 +1,9 @@
-import { GRID_IMAGES } from "@sextival/data";
+import { GRID_IMAGES } from "@sextival/data/2022";
 import { FullSection } from "@sextival/ui/section";
 import Image from "next/image";
 
 // TODO: parallax on images?
-export const Grid2022 = () => {
+export const Grid = () => {
   return (
     <FullSection>
       <div className="flex lg:gap-20">

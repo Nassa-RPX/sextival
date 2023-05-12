@@ -53,7 +53,6 @@ export const InfiniteCards = (props: Props) => {
     .2,
     0,
   ]);
-  
 
   const boxShadow =
     useMotionTemplate`0 ${shadowBlur}px 25px -5px rgba(159, 82, 95, ${shadowOpacity})`;
@@ -71,9 +70,10 @@ export const InfiniteCards = (props: Props) => {
       y.set(0);
 
       const removedCard = [...cards].pop();
-      const c = [removedCard!, ...cards.slice(0, cards.length - 1)];
-
-      setCards(c);
+      if (removedCard) {
+        const c = [removedCard, ...cards.slice(0, cards.length - 1)];
+        setCards(c);
+      }
     }, 400);
   };
 

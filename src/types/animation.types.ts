@@ -1,6 +1,6 @@
 export interface AnimatedElement {
   name: string;
-  img?: string;
+  img: string;
 }
 
 export type Axis = null | "x" | "y";

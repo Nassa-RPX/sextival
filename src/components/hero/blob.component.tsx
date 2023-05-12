@@ -7,6 +7,7 @@ export const Blob = () => (
     animate={{ x: 0, opacity: 1 }}
   >
     <Image
+      alt="blob"
       src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob.png"
       width={530}
       height={475}

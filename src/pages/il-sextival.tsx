@@ -1,6 +1,6 @@
 import { Page } from "@sextival/ui/page";
 import { Spacer } from "@sextival/ui/spacer";
-
+//
 const Sextival = () => {
   return (
     <Page
@@ -16,7 +16,7 @@ const Sextival = () => {
 const SextivalTagline = () => (
   <div className="text-center italic text-xl">
     <p>
-      “La <strong>sessualità</strong> è un aspetto centrale dell'essere umano per tutta la vita e
+      “La <strong>sessualità</strong> è un aspetto centrale dell&pos;essere umano per tutta la vita e
       comprende sesso, identità e ruoli di genere, orientamento sessuale,
       erotismo, piacere, intimità e riproduzione. La sessualità è sperimentata
       ed espressa in pensieri, fantasie, desideri, credenze, atteggiamenti,
@@ -26,7 +26,7 @@ const SextivalTagline = () => (
     <p className="mt-2">
       Se la sessualità può includere tutte queste dimensioni, non tutte vengono
       sempre sperimentate o espresse. La sessualità è influenzata
-      dall'interazione di fattori <strong>biologici, psicologici, sociali, economici,
+      dall&pos;interazione di fattori <strong>biologici, psicologici, sociali, economici,
       politici, culturali, etici, legali, storici, religiosi e spirituali.</strong> ” </p>
   </div>
 );

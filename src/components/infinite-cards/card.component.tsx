@@ -1,7 +1,6 @@
 import { motion, MotionValue, PanInfo } from "framer-motion";
 
 import { AnimatedElement, Axis, Points } from "@sextival/types";
-import { Spacer } from "@sextival/ui/spacer";
 
 interface Style extends Partial<Points<MotionValue<number>>> {
   zIndex: number;
@@ -34,7 +33,8 @@ export const Card = (
   >
     <div className="px-8 py-4 w-full h-full max-h-[400px] flex flex-col pointer-events-none items-center gap-4 relative">
       <img
-        src={card.img!}
+        alt={card.name}
+        src={card.img}
         className="pointer-events-none object-contain h-full"
       />
       <div className="absolute w-full h-[80px] flex items-center justify-center bg-transparent rounded-b-md bottom-0">
