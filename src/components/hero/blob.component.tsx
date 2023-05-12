@@ -11,6 +11,7 @@ export const Blob = () => (
       src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob.png"
       width={530}
       height={475}
+      loading="eager"
     />
   </motion.div>
 );

@@ -14,6 +14,7 @@ export const Grid = () => {
               objectFit="cover"
               src={"https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/2022_1.JPG"}
               className="mt-[-30px] rounded-md shadow-lg mr-[30px]"
+              loading="eager"
             />
           </div>
           <div className="relative w-full flex-1 mt-[30px]">
@@ -22,6 +23,7 @@ export const Grid = () => {
               objectFit="cover"
               src={GRID_IMAGES[1]!}
               className="rounded-md shadow-lg mb-[-20px]"
+              loading="eager"
             />
           </div>
         </div>
@@ -34,6 +36,7 @@ export const Grid = () => {
               layout="fill"
               src={GRID_IMAGES[2]!}
               className="rounded-md shadow-lg"
+              loading="eager"
             />
           </div>
           <div className="relative w-full flex-1 mt-[30px]">
@@ -41,6 +44,7 @@ export const Grid = () => {
               layout="fill"
               src={GRID_IMAGES[3]!}
               className="mb-[20px] ml-[35px] rounded-md shadow-lg"
+              loading="eager"
             />
           </div>
         </div>

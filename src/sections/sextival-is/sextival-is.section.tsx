@@ -23,7 +23,7 @@ export const SextivalIs = () => {
 
       <Spacer className="my-2" />
 
-      <div className="lg:w-4/5 mx-auto lg:text-center text-lg lg:text-3xl">
+      <div className="lg:w-3/4 mx-auto lg:text-center text-lg lg:text-2xl">
         Il <strong>Sextival</strong>{" "}
         è un evento volto a creare dibattito, informazione e aggregazione
         attorno ai problemi e alle questioni relative alla salute sessuale.
@@ -31,7 +31,7 @@ export const SextivalIs = () => {
 
       <Spacer className="my-2" />
 
-      <div className="lg:w-4/5 mx-auto lg:text-center text-lg lg:text-3xl">
+      <div className="lg:w-3/4 mx-auto lg:text-center text-lg lg:text-2xl">
         Rifacendosi alle linee guida dell’Organizzazione Mondiale della Sanità
         (OMS), vuole colmare il divario tra la realtà del nostro territorio e
         l’attuale definizione di salute sessuale e i relativi diritti sessuali.
@@ -39,7 +39,7 @@ export const SextivalIs = () => {
 
       <Spacer className="my-4" />
 
-      <div className="w-full lg:text-center text-xl lg:text-3xl font-bold text-sex-red-4">
+      <div className="w-full lg:text-center text-xl lg:text-2xl font-bold text-sex-red-4">
         Il nostro è un obiettivo duplice
       </div>
 
@@ -50,7 +50,7 @@ export const SextivalIs = () => {
           <Card.Icon>
             <NetIcon className="text-sex-red-2 h-8 w-8 lg:h-12 lg:w-12" />
           </Card.Icon>
-          <Card.Title className="text-sex-red-4 text-2xl lg:text-3xl">
+          <Card.Title className="text-sex-red-4 text-2xl lg:text-2xl">
             Rete
           </Card.Title>
           <Card.Body className="mt-2 text-md lg:text-xl lg:w-3/4 px-4 lg:px-0 mx-auto text-center leading-tight">
@@ -63,7 +63,7 @@ export const SextivalIs = () => {
           <Card.Icon>
             <GroupIcon className="text-sex-red-2 h-8 w-8 lg:h-12 lg:w-12" />
           </Card.Icon>
-          <Card.Title className="text-sex-red-4 text-2xl lg:text-3xl">
+          <Card.Title className="text-sex-red-4 text-2xl lg:text-2xl">
             Aggregazione
           </Card.Title>
           <Card.Body className="mt-2 text-md lg:text-xl lg:w-3/4 px-4 lg:px-0 mx-auto text-center leading-tight">

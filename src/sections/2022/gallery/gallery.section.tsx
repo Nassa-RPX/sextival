@@ -11,7 +11,7 @@ export const Gallery = () => {
       <div className="grid grid-cols-2 grid-rows-2 gap-4 lg:gap-12">
         {GRID_IMAGES.map((image) => (
           <div key={image} className="relative w-full h-[200px] lg:h-[300px]">
-            <Image src={image} layout="fill" objectFit="cover" />
+            <Image src={image} layout="fill" objectFit="cover" loading="lazy" />
           </div>
         ))}
       </div>
