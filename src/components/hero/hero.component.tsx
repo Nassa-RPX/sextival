@@ -9,10 +9,10 @@ export const Hero = () => {
 
       <div className="h-screen relative flex-1 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:justify-center  order-2 lg:order-1">
-          <h1 className="text-6xl lg:text-[80px] text-sex-blue font-bold">
+          <h1 className="text-6xl lg:text-[80px] text-sex-blue-6 font-bold">
             16 & 17 GIUGNO
           </h1>
-          <h1 className="text-3xl lg:text-[60px] text-sex-red-6 font-black mt-4 leading-tight">
+          <h1 className="text-3xl lg:text-[60px] text-sex-blue-4 font-black mt-4 leading-tight">
             VIENI
           </h1>
           <h1 className="text-3xl lg:text-[60px] text-sex-red-4 font-bold leading-none">
