@@ -32,7 +32,7 @@ const SextivalTagline = () => (
       <div className="lg:rotate-[30deg] z-[-2]">
         <Image
           alt="blob2"
-          src="/blob_local/PNG/10.png"
+          src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob/10.png"
           width={500}
           height={250}
           objectFit="contain"
@@ -126,7 +126,7 @@ const SextivalAbout = () => (
     </div>
     <div className="absolute right-0  top-[-30%] lg:top-[-15%] rotate-45  z-[-2]">
       <Image
-        src="/blob_local/PNG/13.png"
+        src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob/13.png"
         alt="blob2"
         loading="lazy"
         width={400}
