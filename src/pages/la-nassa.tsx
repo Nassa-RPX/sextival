@@ -5,7 +5,7 @@ import { Page } from "@sextival/ui/page";
 
 const Nassa = () => {
   return (
-    <Page title="La Nassa">
+    <Page title="LA NASSA">
       <div className="md:flex md:justify-evenly md:items-start bg-pink gap-8">
         <p className="md:py-0 md:basis-1/2 xl:basis-1/3 text-md md:text-xl  text-justify">
           Il progetto Nassa nasce nel 2019 a{" "}
