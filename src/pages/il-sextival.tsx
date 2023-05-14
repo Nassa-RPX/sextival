@@ -124,7 +124,7 @@ const SextivalAbout = () => (
         qualsiasi paese.
       </p>
     </div>
-    <div className="absolute right-0  top-[-30%] lg:top-[-15%] rotate-45  z-[-2]">
+    <div className="absolute right-0 top-[-30%] lg:top-[-15%] lg:rotate-45  z-[-2]">
       <Image
         src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob/13.png"
         alt="blob2"
