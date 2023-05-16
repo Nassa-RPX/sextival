@@ -33,6 +33,7 @@ module.exports = {
           8: "#92353A",
         },
 
+        "shadow-blue": "#b8b4dd",
         "2022-sex-blue": "#090346",
       },
       backgroundImage: {

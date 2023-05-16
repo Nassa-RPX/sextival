@@ -17,6 +17,9 @@ export default defineNextConfig({
   swcMinify: true,
   output: "standalone",
   images: {
-    domains: ["pub-017f84a06d12468b8456a49acac6a458.r2.dev"],
+    domains: [
+      "pub-017f84a06d12468b8456a49acac6a458.r2.dev",
+      "s3.us-west-2.amazonaws.com",
+    ],
   },
 });

@@ -17,8 +17,6 @@ export const useWindowInfo = <T extends HTMLElement = HTMLElement>(
       const width = window.innerWidth;
       const height = window.innerHeight;
 
-      console.log("ref", ref.current);
-
       const positionY = ref.current.offsetTop;
       const positionX = ref.current.offsetLeft;
 
