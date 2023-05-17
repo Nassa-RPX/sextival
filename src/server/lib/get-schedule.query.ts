@@ -4,6 +4,12 @@ import { Schedule } from "../types";
 import { mapping } from "../mappings/mapping-schedule";
 
 export const getSchedule = async (): Promise<Schedule> => {
-  const rawSchedule = await client.databases.query({ database_id: SCHEDULE });
+  const rawSchedule = await client.databases.query({
+    database_id: SCHEDULE,
+    sorts: [{
+      property: "Ore",
+      direction: "ascending",
+    }],
+  });
   return mapping(rawSchedule);
 };

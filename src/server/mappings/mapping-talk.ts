@@ -31,6 +31,12 @@ export const mapping = (partial: GetPageResponse) => {
       hour = Ore.select.name;
     }
 
+    const Tipo = p.Tipo;
+    let type = undefined;
+    if (Tipo && Tipo.type === "select" && Tipo.select?.name) {
+      type = Tipo.select.name;
+    }
+
     const Ospiti = p.Ospiti;
     let guest_ids: string[] = [];
 
@@ -44,6 +50,7 @@ export const mapping = (partial: GetPageResponse) => {
       day,
       hour,
       guest_ids,
+      type,
     };
   }
 };

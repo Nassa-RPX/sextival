@@ -12,7 +12,10 @@ const Guests: NextPage<{ guests: Array<Guest>; schedule: Schedule }> = (
     <Page title="Lə OSPITə">
       <div className="grid gap-8 flex-wrap md:grid-cols-2 xl:grid-cols-3">
         {guests.map((g) => (
-          <div className="flex-1 flex flex-col gap-6 bg-sex-blue-2 shadow-sm shadow-shadow-blue bg-opacity-20 p-8 rounded-md">
+          <div
+            key={g.name}
+            className="flex-1 flex flex-col gap-6 bg-sex-blue-2 shadow-sm shadow-shadow-blue bg-opacity-20 p-8 rounded-md"
+          >
             <div className="flex gap-6 items-center ">
               <div className="relative w-[60px] h-[60px] rounded-xl">
                 <Image

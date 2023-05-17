@@ -11,7 +11,7 @@ export interface Talk {
   description: string;
   day: string;
   hour: string;
-  type: string;
+  type: "Workshop" | "Intervento";
 
   guest_ids: string[];
 }
