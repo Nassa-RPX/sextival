@@ -12,8 +12,10 @@ export const DayButton = (
   <div
     onClick={onClick}
     className={clsx(
-      "py-3 px-8 rounded-md cursor-pointer transition-colors text-lg",
-      selected ? "bg-sex-red-6 text-white" : "bg-sex-red-0",
+      "py-3 px-8 text-center rounded-md cursor-pointer transition-colors font-bold text-md lg:text-lg leading-tight",
+      selected
+        ? "bg-sex-blue-4 text-white"
+        : "bg-transparent border border-sex-blue-4 text-sex-blue-4",
     )}
   >
     {children}
