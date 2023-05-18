@@ -11,9 +11,14 @@ export interface Talk {
   description: string;
   day: string;
   hour: string;
-  type: "Workshop" | "Intervento";
+  type: Type;
 
   guest_ids: string[];
 }
 
 export type Schedule = Array<Talk>;
+
+export type Type = "Workshop" | "Intervento";
+export type Day = 17 | 18;
+
+export type GroupedSchedule = Record<Day, Record<Type, Talk[]>>;
