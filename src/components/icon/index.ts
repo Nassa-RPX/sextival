@@ -12,3 +12,4 @@ export { RightIcon } from "./right.icon";
 export { QuoteIcon } from "./quote.icon";
 export { HammerIcon } from "./hammer.icon";
 export { MicrophoneIcon } from "./microphone.icon";
+export { InfoIcon } from "./info.icon";

@@ -1,9 +1,11 @@
+import Link from "next/link";
+
 import { useFetch } from "@sextival/hooks";
 import { mapping } from "@sextival/server/mappings/mapping-guest";
 import { Guest as IGuest } from "@sextival/server/types";
-import clsx from "clsx";
-import Image from "next/image";
-import Link from "next/link";
+import { Avatar } from "@sextival/ui/avatar/avatar.ui";
+import { getInitials } from "@sextival/utils";
+import { InfoIcon } from "@sextival/components/icon";
 
 interface Props {
   guest_ids: string[];
@@ -24,30 +26,20 @@ const Guest = ({ id }: { id: string }) => {
   );
 
   return (
-    <>
-      {guest && guest.data
-        ? (
-          <Link href="/2023/ospiti">
-            <div className="flex gap-4 items-center cursor-pointer">
-              <div
-                className={clsx(
-                  "w-[50px] h-[50px] rounded-full relative border border-sex-red-4",
-                )}
-              >
-                {guest.data.cover && (
-                  <Image
-                    src={guest.data.cover}
-                    layout="fill"
-                    className="rounded-full"
-                  />
-                )}
-              </div>
-
-              <span className="text-md lg:text-xl">{guest.data.name}</span>
-            </div>
-          </Link>
-        )
-        : <div className="w-[50px] h-[50px] rounded-full bg-black" />}
-    </>
+    <div className="flex items-center gap-2 lg:justify-between">
+      <div className="flex gap-4 items-center">
+        <Avatar
+          img={guest.data?.cover}
+          alt={getInitials(guest.data?.name)}
+          isFirst={true}
+          isLoading={!guest || !guest.data}
+          className="w-[50px] h-[50px]"
+        />
+        <span>{guest.data?.name}</span>
+      </div>
+      <Link href="/edizioni/2023/ospiti">
+        <InfoIcon className="cursor-pointer" />
+      </Link>
+    </div>
   );
 };

@@ -4,6 +4,7 @@ import { Heading } from "@sextival/ui/heading";
 import { Page } from "@sextival/ui/page";
 import { Spacer } from "@sextival/ui/spacer";
 import Image from "next/image";
+import Link from "next/link";
 //
 const Sextival = () => {
   return (
@@ -41,29 +42,24 @@ const SextivalTagline = () => (
       </div>
 
       <div className="flex-1 ">
-        <div className="lg:w-3/4 flex flex-col gap-1 leading-tight ">
+        <div className="lg:w-3/4 flex flex-col gap-2 leading-tight ">
           <p>
-            Come potreste immaginarvi dal nome dell&apos;evento, il nostro
-            obiettivo è parlare di <strong>sesso</strong>.
+            <strong>Sesso</strong>.{" "}
+            <i>Sessualità</i>. Piacere. Godere. Erotismo. Ruoli e identità di
+            genere. Masturbazione. Malattie sessualmente trasmissibili.
+            Poliamore. AIDS.
           </p>
-
           <p>
-            <i>S e s s o</i>. Una parola forse spaventosa, sicuramente confusa,
-            nebulosa.
+            Per moltə queste parole possono essere promotrici di disturbo. Per
+            altrə, possono essere motivo di una qualche baraonda interiore. Il
+            motivo è semplice: di sesso, in pubblico, non se ne parla. Di sesso,
+            di piacere, di erotismo, se ne parla di nascosto, in privato: come
+            se ci fosse qualcosa di cui vergognarsi. Sui palchi, di informazione
+            sessuale non se ne parla mai. Ed è cosi che si diffonde una
+            pericolosa ignoranza, che va combattuta ad ogni costo.
           </p>
-
           <p>
-            Vogliamo parlare di oscenità, insomma.
-          </p>
-
-          <p>
-            Ma più precisamente, vogliamo parlare di{" "}
-            <strong>sessualità</strong>, a 360°.
-          </p>
-
-          <p>
-            Prima di iniziare però, dobbiamo partire dalle basi. Come si
-            definisce la sessualità?
+            E il <strong>Sextixal</strong> ha fatto, e farà, esattamente questo.
           </p>
         </div>
       </div>
@@ -98,30 +94,47 @@ const SextivalTagline = () => (
 const SextivalAbout = () => (
   <section className="text-xl relative">
     <div className="lg:w-3/4 pt-4 lg:pt-0 bg-sex-blue-0 backdrop-blur-md bg-opacity-60 flex flex-col gap-4 leading-tight">
+      <Heading order={2} className="text-sex-red-6 text-xl lg:text-4xl">
+        SEX-CHE?
+      </Heading>
+
       <p>
-        Queste parole, che possono risultare sconvolgenti per alcunə,
-        illuminanti per altrə, non sono l&apos;espressione del pensiero di una
-        parte politica o di qualcunə che ha scelto di stare dalla parte
-        “progressista” dei diritti civili, ma vengono da un&apos;ente che fa da
-        riferimento scientifico per tutti i paesi aderenti
-        all&apos;Organizzazione delle Nazioni Unite: l&apos;Organizzazione
-        Mondiale della Sanità (OMS).
-      </p>
-      <p>
-        Spesso si tratta la tematica della sessualità come fosse una questione
-        di opinione, se non addirittura come un tema che possa restare non
-        discusso, non dibattuto, nascosto sotto ad un tappeto di timore e
-        pregiudizio. In realtà, la ricerca scientifica sulla salute sessuale ci
-        ha dato risposte chiare su tantissime tematiche, se pur il lavoro da
-        fare sia ancora tanto.
+        Nel 2022, in Liguria, nell&apos;area geografica con il più alto tasso di
+        anzianità di tutta Europa, la nostra associazione, Nassa Rapallo, ha
+        deciso di mettere in piedi la prima edizione del<strong>
+          Sextival
+        </strong>, il festival dell&apos;educazione e della salute sessuale.
       </p>
 
       <p>
-        E l&apos;ignoranza di queste conoscenze, dilagante in tutte le fasce
-        anagrafiche della popolazione, crea danni a volte irreparabili, per sé e
-        per lə altrə. Per questo vogliamo lottare affinché l&apos;educazione
-        sessuale si tramuti in un diritto garantito alle persone cittadine di
-        qualsiasi paese.
+        La struttura è semplice: due giorni di workshop, seminari e interventi
+        riguardanti le tematiche di salute ed educazione sessuale, in un
+        ambiente divertente, piacevole e aggregativo, capace di stimolare una
+        socialità genuina tra persone con bagagli culturali ed esperienziali
+        differenti, anche grazie a tanto cibo locale e musica dal vivo.
+      </p>
+
+      <p>
+        Oh, un <strong>successo</strong>.
+      </p>
+
+      <p>
+        Il Sextival si è configurato come uno degli eventi di più forte impatto
+        nella storia recente del nostro territorio.
+      </p>
+
+      <p>
+        Al nostro festival hanno partecipato attivistə, divulgatorə e
+        professionistə incredibili - per citare alcuni nomi, ci hanno raggiunto
+        Daphne Bohemién, Iacopo Melio, Nicola Macchione, Maximiliano Ulivieri e
+        tantə tantə altrə - che ci hanno raccontato l&apos;importanza
+        dell’educazione alla sessualità attraverso le loro competenze ed
+        esperienze individuali. Diritti sessuali delle persone con disabilità,
+        il rapporto fra queerness e fede, malattie invisibilizzate, parafilie,
+        feticci, omogenitorialità… Le tematiche trattate sono state moltissime,
+        e per avere un quadro più specifico di che cosa abbiamo costruito
+        l&apos;anno scorso, puoi trovare tutte le informazioni{" "}
+        <Link href="/edizioni/2022">in questa sezione</Link>.
       </p>
     </div>
     <div className="absolute right-0 top-[-30%] lg:top-[-15%] lg:rotate-45  z-[-2]">
@@ -137,35 +150,27 @@ const SextivalAbout = () => (
 );
 
 const SextivalWhat = () => (
-  <section className="flex flex-col gap-2 text-lg lg:w-4/5">
+  <section className="flex flex-col gap-2 text-lg lg:text-xl lg:w-4/5">
     <Heading order={2} className="text-sex-red-6 text-xl lg:text-4xl">
-      CHE COS&apos;È IL SEXTIVAL
+      QUALI SONO GLI OBIETTIVI
     </Heading>
 
     <p>
-      Il{"   "}<strong>Sextival</strong>{" "}
-      è un evento, ideato dall&apos;associazione rapallese Nassa Rapallo, volto
-      a creare dibattito, informazione e aggregazione attorno ai problemi e alle
-      questioni relative alla salute ed educazione sessuale. Rifacendoci alle
-      linee guida dell&apos;Organizzazione Mondiale della Sanità (OMS), il
-      nostro obiettivo è quello di creare coscienza popolare attorno a queste
-      tematiche, anche sottolineando le lacune istituzionali nel nostro
-      territorio e paese e riflettendo su come esse possano essere colmate; il
-      desiderio è quello di avvicinarci agli standard mondiali di salute
-      sessuale (sanciti dall&apos;Agenda 2030 per lo sviluppo sostenibile) e il
-      rispetto dei relativi diritti sessuali.
+      Il nostro obiettivo primario è quello di creare cultura intorno alla
+      tematica della sessualità, seguendo al più possibile le definizioni e i
+      protocolli offerti dall&apos;Organizzazione Mondiale della Sanità, e
+      perseguendo gli obiettivi dell&apos;Agenda 2030 per lo sviluppo
+      sostenibile – che sì, comprende pure la salute sessuale. Se non lo sapevi,
+      ecco cosa ci stiamo a fare qui.
     </p>
 
     <p>
-      L’obiettivo è <strong>duplice</strong>
-      : da una parte si intende dare voce alle realtà italiane e, ancor più, del
-      territorio ligure che già si occupano del tema della salute sessuale, che
-      siano esse associazioni, educatorə, rappresentanti della sanità pubblica,
-      artistə e liberə professionistə; dall&apos;altra, si vuole organizzare un
-      evento che possa essere divertente, piacevole e aggregativo, in modo da
-      stimolare una socialità genuina tra persone con bagagli culturali ed
-      esperienziali differenti, attraverso l&apos;organizzazione di workshop,
-      musica dal vivo, spettacoli di intrattenimento e momenti di convivialità.
+      In secondo luogo, il nostro desiderio è quello di creare una rete di
+      associazioni, enti e personalità dedite all&apos;argomento, tentando di
+      colmare alcune delle gravi lacune delle nostre istituzioni nel garantire
+      alla sua cittadinanza livelli soddisfacenti di salute sessuale. Grazie a
+      queste collaborazioni, potremo creare progetti a lungo termine che vadano
+      a beneficio di tutto il territorio, per tutte le persone.
     </p>
   </section>
 );
@@ -173,17 +178,36 @@ const SextivalWhat = () => (
 const Sextival2023Info = () => (
   <section className="flex flex-col gap-2 text-lg lg:text-xl lg:w-4/5">
     <Heading order={2} className="text-sex-red-6 text-xl lg:text-4xl">
-      Dai, figo. Ma DOVE e QUANDO?
+      UN PO' DI DEFINIZIONI
     </Heading>
 
     <p>
-      La seconda edizione del Sextival si svolgerà a{" "}
-      <strong>Rapallo (GE)</strong>, a San Pietro, in due giornate{" "}
-      <strong>(17 e 18 giugno 2023)</strong>, dove creeremo un ambiente di
-      discussione aperto, non giudicante, sicuro ed inclusivo, sia per coloro a
-      cui il tema risulti essere completamente nuovo, sia per chi, per motivi di
-      lavoro o di vita personale, ha già a cuore molte o alcune delle tematiche
-      del Sextival.
+      Le parole citate all&apos;inizio di questa pagina, come abbiamo detto,
+      possono risultare sconvolgenti per alcunə, ma anche illuminanti per altrə.
+      Il punto che a noi sta a cure è che molte delle loro definizioni non sono
+      labili come le potremmo pensare. Le definizioni di sesso, sessualità,
+      diritti sessuali e salute sessuale non sono espressione del pensiero di
+      una parte politica o di chi ha scelto di stare dalla parte “progressista”
+      dei diritti civili, ma vengono da un ente che fa da riferimento
+      scientifico per tutti i paesi aderenti all&apos;Organizzazione delle
+      Nazioni Unite: l&apos;<strong>
+        Organizzazione Mondiale della Sanità
+      </strong>{" "}
+      (OMS).
+    </p>
+
+    <p>
+      Infatti, se pur spesso si tratti la tematica della sessualità come fosse
+      una questione di opinione, se non addirittura come un tema che possa
+      restare non discusso, non dibattuto o nascosto sotto ad un tappeto di
+      timore e pregiudizio, la ricerca scientifica sulla salute sessuale ha già
+      dato, da tempo, risposte risposte molto chiare su molte di queste
+      questioni, se pur il lavoro di ricerca sia ancora tanto. L&apos;ignoranza
+      di queste conoscenze, dilagante in tutte le fasce anagrafiche della
+      popolazione, crea danni a volte irreparabili, per sé e per lə altrə. Per
+      questo vogliamo lottare affinché l&apos;<i>educazione sessuale</i>{" "}
+      si tramuti in un diritto garantito alle persone cittadine di qualsiasi
+      paese.
     </p>
   </section>
 );

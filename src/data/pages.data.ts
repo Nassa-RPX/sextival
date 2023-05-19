@@ -28,5 +28,5 @@ export const PAGES: Pages = [
     ],
   },
 
-  { label: "PARTNER", link: "/partner" },
+  { label: "SOSTIENI", link: "/sostieni" },
 ];

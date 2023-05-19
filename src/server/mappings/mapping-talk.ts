@@ -5,7 +5,7 @@ export const mapping = (partial: GetPageResponse) => {
     const p = partial.properties;
 
     const Descrizione = p.Descrizione;
-    let description = undefined;
+    let description = null;
     if (
       Descrizione && Descrizione.type === "rich_text" &&
       Descrizione.rich_text.length > 0

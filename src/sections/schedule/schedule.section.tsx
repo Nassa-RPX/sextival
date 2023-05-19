@@ -46,9 +46,9 @@ export const Schedule = ({ schedule }: Props) => {
         </DayButton>
       </div>
 
-      <Spacer type="y" dimension="md" />
+      <Spacer type="y" dimension="sm" />
 
-      <div className="flex gap-4 items-center">
+      <div className="mx-auto flex gap-4 items-center">
         <TypeButton
           icon={<MicrophoneIcon />}
           selected={selectedType === "Intervento"}
@@ -64,14 +64,11 @@ export const Schedule = ({ schedule }: Props) => {
         >
           Workshop
         </TypeButton>
-        <span className="text-sex-blue-8 text-opacity-70 leading-tight">
-          Scegli il tipo di intervento
-        </span>
       </div>
 
-      <Spacer type="y" dimension="sm" />
+      <Spacer type="y" dimension="md" />
 
-      <div className="flex flex-col gap-2 overflow-hidden">
+      <div className="flex flex-col gap-2 lg:w-4/5 mx-auto overflow-hidden">
         <AnimatePresence mode="popLayout">
           {schedule && schedule[selectedDay] &&
             schedule[selectedDay][selectedType].map((t, i) => (
@@ -90,7 +87,7 @@ export const Schedule = ({ schedule }: Props) => {
                 }}
                 className="flex"
               >
-                <div className="basis-1/5 bg-sex-red-8 p-8 rounded-l-md flex items-center justify-center text-sm lg:text-lg font-bold leading-none text-center text-white">
+                <div className="basis-1/6 bg-sex-red-8 p-8 rounded-l-md flex items-center justify-center text-sm lg:text-lg font-bold leading-none text-center text-white">
                   {t.hour}
                 </div>
                 <div className="flex-1 bg-sex-red-6 min-h-[100px] flex py-4 px-8 flex-col rounded-r-md">

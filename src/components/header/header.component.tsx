@@ -1,4 +1,4 @@
-import React, { Fragment, useMemo, useRef, useState } from "react";
+import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import clsx from "clsx";
 import Link from "next/link";
@@ -15,6 +15,7 @@ import {
   useScrollLock,
 } from "@sextival/hooks";
 import { Dropdown } from "../dropdown/dropdown.component";
+import { useRouter } from "next/router";
 
 const variants: Variants = {
   base: {
@@ -45,6 +46,12 @@ export const Header = () => {
   const { lock } = useScrollLock(false);
 
   const [openNav, setOpenNav] = useState(false);
+  const { pathname } = useRouter();
+
+  useEffect(() => {
+    lock(false);
+    setOpenNav(false);
+  }, [pathname]);
 
   return (
     <>
