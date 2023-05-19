@@ -178,7 +178,7 @@ const SextivalWhat = () => (
 const Sextival2023Info = () => (
   <section className="flex flex-col gap-2 text-lg lg:text-xl lg:w-4/5">
     <Heading order={2} className="text-sex-red-6 text-xl lg:text-4xl">
-      UN PO' DI DEFINIZIONI
+      UN PO&apos; DI DEFINIZIONI
     </Heading>
 
     <p>
