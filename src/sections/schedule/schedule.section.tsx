@@ -8,12 +8,14 @@ import { TypeButton } from "./type-button";
 import { Guests } from "./guests";
 import { Modal } from "@sextival/components/modal";
 import { ModalGuests } from "./modal-guests";
+import clsx from "clsx";
 
 interface Props {
   schedule: GroupedSchedule;
+  centered?: boolean;
 }
 
-export const Schedule = ({ schedule }: Props) => {
+export const Schedule = ({ schedule, centered }: Props) => {
   const [selectedDay, setSelectedDay] = useState<Day>(17);
 
   const [selectedType, setSelectedType] = useState<Type>(
@@ -30,7 +32,7 @@ export const Schedule = ({ schedule }: Props) => {
 
   return (
     <>
-      <div className="flex mx-auto gap-2">
+      <div className={clsx("flex mx-auto gap-2")}>
         <DayButton
           selected={selectedDay === 17}
           onClick={() => onChangeDay(17)}
@@ -68,7 +70,12 @@ export const Schedule = ({ schedule }: Props) => {
 
       <Spacer type="y" dimension="md" />
 
-      <div className="flex flex-col gap-2 lg:w-4/5 mx-auto overflow-hidden">
+      <div
+        className={clsx(
+          "flex flex-col gap-2 overflow-hidden",
+          centered && "lg:w-4/5 mx-auto ",
+        )}
+      >
         <AnimatePresence mode="popLayout">
           {schedule && schedule[selectedDay] &&
             schedule[selectedDay][selectedType].map((t, i) => (

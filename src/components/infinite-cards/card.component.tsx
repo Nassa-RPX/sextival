@@ -20,7 +20,7 @@ export const Card = (
   { card, style, onDirectionLock, onDragEnd, animate }: Props,
 ) => (
   <motion.div
-    className="absolute left-0 bottom-0 right-0 top-0 rounded-md text-sex-dblue text-3xl lg:text-5xl font-handwriting font-bold bg-[#fadce1] "
+    className="absolute left-0 bottom-0 right-0 top-0 rounded-md text-sex-dblue text-3xl font-bold bg-[#fadce1] "
     drag="x"
     dragConstraints={{ left: 0, right: 0 }}
     dragDirectionLock
@@ -37,7 +37,7 @@ export const Card = (
         src={card.img}
         className="pointer-events-none object-contain h-full"
       />
-      <div className="absolute w-full h-[80px] flex items-center justify-center bg-transparent rounded-b-md bottom-0">
+      <div className="absolute w-full h-[60px] flex items-center justify-center  bg-[#fadce1] rounded-b-md bottom-0">
         {card.name}
       </div>
     </div>
