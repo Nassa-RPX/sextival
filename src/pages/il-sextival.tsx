@@ -1,5 +1,6 @@
 import { Accordion } from "@sextival/components/accordion";
 import { QuoteIcon } from "@sextival/components/icon";
+import { DEFINITIONS } from "@sextival/data";
 import { Callout } from "@sextival/ui/callout";
 import { Heading } from "@sextival/ui/heading";
 import { Page } from "@sextival/ui/page";
@@ -26,12 +27,7 @@ const Sextival = () => {
       <Sextival2023Info />
 
       <Spacer type="y" dimension="lg" />
-      <Accordion
-        data={[{ label: "Prova", description: "weee" }, {
-          label: "prova 2",
-          description: "weee2",
-        }]}
-      />
+      <SextivalDefinitions />
     </Page>
   );
 };
@@ -218,6 +214,14 @@ const Sextival2023Info = () => (
       si tramuti in un diritto garantito alle persone cittadine di qualsiasi
       paese.
     </p>
+  </section>
+);
+
+const SextivalDefinitions = () => (
+  <section className="flex flex-col  lg:w-4/5">
+    <Accordion
+      data={DEFINITIONS}
+    />
   </section>
 );
 
