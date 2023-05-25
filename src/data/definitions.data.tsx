@@ -6,11 +6,11 @@ export const DescriptionDirittiSessuali = () => (
     <p>
       Vi è un crescente consenso sul fatto che la salute sessuale non possa
       essere raggiunta e mantenuta senza il rispetto e la protezione di alcuni
-      diritti umani. L'applicazione dei diritti umani esistenti alla sessualità
+      diritti umani. L&apos;applicazione dei diritti umani esistenti alla sessualità
       e alla salute sessuale costituisce i diritti sessuali. I diritti sessuali
       tutelano il diritto di tutte le persone a realizzare ed esprimere la
       propria sessualità e a godere della salute sessuale, nel rispetto dei
-      diritti altrui e in un quadro di protezione contro la discriminazione".
+      diritti altrui e in un quadro di protezione contro la discriminazione.
       (OMS, 2006a, aggiornato al 2010)
     </p>
 
@@ -23,7 +23,7 @@ export const DescriptionDirittiSessuali = () => (
     </p>
 
     <ul className="flex flex-col gap-2 list-disc">
-      <li>Il diritto all'uguaglianza e alla non discriminazione</li>
+      <li>Il diritto all&apos;uguaglianza e alla non discriminazione</li>
       <li>
         Il diritto di essere liberi dalla tortura o da trattamenti o punizioni
         crudeli, inumani o degradanti
@@ -36,10 +36,10 @@ export const DescriptionDirittiSessuali = () => (
       <li>
         Il diritto di sposarsi e di fondare una famiglia e di contrarre
         matrimonio con il libero e pieno consenso dei coniugi intenzionati, e
-        all'uguaglianza nel matrimonio e al suo scioglimento
+        all&apos;uguaglianza nel matrimonio e al suo scioglimento
       </li>
       <li>Il diritto di decidere il numero e la distanza dei propri figli</li>
-      <li>Il diritto all'informazione e all'istruzione</li>
+      <li>Il diritto all&apos;informazione e all&apos;istruzione</li>
       <li>Il diritto alla libertà di opinione e di espressione, e</li>
       <li>
         Il diritto a un rimedio efficace per le violazioni dei diritti
