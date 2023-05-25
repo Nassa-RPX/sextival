@@ -8,7 +8,7 @@ export const TEAM: Array<Teammate> = [
   { name: "Riccardo Castelnuovo Fustinoni", img: getImgPath("Riccardo") },
   { name: "Chiara Pellegrini", img: getImgPath("Chiara") },
   { name: "Luca Brindani", img: getImgPath("Luca") },
-  { name: "Camilla Demartini", img: getImgPath("Camilla") },
+  { name: "Maria Camilla Demartini", img: getImgPath("Camilla") },
   { name: "Francesca Giudice", img: getImgPath("Frilli") },
   { name: "Cecilia Chiappari", img: getImgPath("Cecilia") },
 ];
