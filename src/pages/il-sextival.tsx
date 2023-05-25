@@ -1,3 +1,4 @@
+import { Accordion } from "@sextival/components/accordion";
 import { QuoteIcon } from "@sextival/components/icon";
 import { Callout } from "@sextival/ui/callout";
 import { Heading } from "@sextival/ui/heading";
@@ -23,6 +24,14 @@ const Sextival = () => {
 
       <Spacer type="y" dimension="md" />
       <Sextival2023Info />
+
+      <Spacer type="y" dimension="lg" />
+      <Accordion
+        data={[{ label: "Prova", description: "weee" }, {
+          label: "prova 2",
+          description: "weee2",
+        }]}
+      />
     </Page>
   );
 };
