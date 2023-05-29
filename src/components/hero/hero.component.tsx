@@ -7,7 +7,7 @@ export const Hero = () => {
     <div className="w-full h-full relative">
       <Radials />
 
-      <div className="h-screen relative flex-1 flex flex-col lg:flex-row">
+      <div className="min-h-screen relative flex-1 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:justify-center  order-2 lg:order-1">
           <h1 className="text-6xl lg:text-[80px] text-sex-blue-6 font-bold">
             17 & 18 GIUGNO,

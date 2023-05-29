@@ -31,8 +31,6 @@ export async function getServerSideProps() {
   // Get the posts
   const schedule = await getSchedule();
 
-  console.log("SERVER SCHEDULE", schedule);
-
   // Return the result
   return {
     props: {

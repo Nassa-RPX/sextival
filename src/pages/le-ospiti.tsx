@@ -1,13 +1,18 @@
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 import { getGuests } from "@sextival/server/lib";
+import { getSchedule } from "@sextival/server/lib/get-raw-schedule";
 import { Guest, Schedule } from "@sextival/server/types";
 import { Heading } from "@sextival/ui/heading";
 import { Page } from "@sextival/ui/page";
 import { NextPage } from "next";
 import Image from "next/image";
 
-const Guests: NextPage<{ guests: Array<Guest>; schedule: Schedule }> = (
-  { guests },
+const Guests: NextPage<
+  { guests: Array<Guest>; schedule: QueryDatabaseResponse }
+> = (
+  { guests, schedule },
 ) => {
+  console.log("schedule", schedule);
   return (
     <Page title="Lə OSPITə">
       <div className="grid gap-8 flex-wrap md:grid-cols-2 xl:grid-cols-3">
@@ -44,10 +49,13 @@ export async function getServerSideProps() {
   // Get the posts
   const guests = await getGuests();
 
+  const schedule = await getSchedule();
+
   // Return the result
   return {
     props: {
       guests,
+      schedule,
     },
   };
 }

@@ -6,6 +6,7 @@ import { Guest as IGuest } from "@sextival/server/types";
 import { Avatar } from "@sextival/ui/avatar/avatar.ui";
 import { getInitials } from "@sextival/utils";
 import { InfoIcon } from "@sextival/components/icon";
+import { Text } from "@sextival/components/skeleton";
 
 interface Props {
   guest_ids: string[];
@@ -35,7 +36,9 @@ const Guest = ({ id }: { id: string }) => {
           isLoading={!guest || !guest.data}
           className="w-[50px] h-[50px]"
         />
-        <span>{guest.data?.name}</span>
+        <span>
+          {guest.data && guest.data.name ? guest.data.name : <Text />}
+        </span>
       </div>
       <Link href="/edizioni/2023/ospiti">
         <InfoIcon className="cursor-pointer" />

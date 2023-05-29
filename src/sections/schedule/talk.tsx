@@ -41,9 +41,13 @@ export const Talk = (
         {hour}
       </div>
       <div className="flex-1 bg-sex-red-6 min-h-[100px] flex py-4 px-8 flex-col rounded-r-md">
-        <h3 className="text-lg lg:text-xl font-bold">{title}</h3>
-        <div className="lg:w-4/5 leading-tight text-justify">
-          <p className={clsx(expanded ? "line-clamp-none" : "line-clamp-3 lg:line-clamp-2")}>
+        <h3 className="text-xl lg:text-2xl font-bold">{title}</h3>
+        <div className="leading-tight lg:w-4/5 lg:text-justify">
+          <p
+            className={clsx(
+              expanded ? "line-clamp-none" : "line-clamp-3 lg:line-clamp-2",
+            )}
+          >
             {description}
           </p>
           {description && description.length > 0 && (

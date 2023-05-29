@@ -10,7 +10,9 @@ export const mapping = (partial: GetPageResponse) => {
       Descrizione && Descrizione.type === "rich_text" &&
       Descrizione.rich_text.length > 0
     ) {
-      description = Descrizione.rich_text[0]?.plain_text;
+      // description = Descrizione.rich_text[0]?.plain_text;
+      const plainT = Descrizione.rich_text.map((t) => t.plain_text);
+      description = plainT.join('')
     }
 
     const Titolo = p.Titolo;
