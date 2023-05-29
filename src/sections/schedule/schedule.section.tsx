@@ -1,14 +1,17 @@
 import { HammerIcon, MicrophoneIcon } from "@sextival/components/icon";
 import { Day, GroupedSchedule, Type } from "@sextival/server/types";
-import { Spacer } from "@sextival/ui/spacer";
-import { AnimatePresence, motion } from "framer-motion";
+
+import { AnimatePresence } from "framer-motion";
 import { useCallback, useState } from "react";
+import clsx from "clsx";
+
+import { Spacer } from "@sextival/ui/spacer";
+import { Modal } from "@sextival/components/modal";
+
 import { DayButton } from "./day-button";
 import { TypeButton } from "./type-button";
-import { Guests } from "./guests";
-import { Modal } from "@sextival/components/modal";
 import { ModalGuests } from "./modal-guests";
-import clsx from "clsx";
+import { Talk } from "./talk";
 
 interface Props {
   schedule: GroupedSchedule;
@@ -69,7 +72,6 @@ export const Schedule = ({ schedule, centered }: Props) => {
       </div>
 
       <Spacer type="y" dimension="md" />
-
       <div
         className={clsx(
           "flex flex-col gap-2 overflow-hidden",
@@ -79,36 +81,15 @@ export const Schedule = ({ schedule, centered }: Props) => {
         <AnimatePresence mode="popLayout">
           {schedule && schedule[selectedDay] &&
             schedule[selectedDay][selectedType].map((t, i) => (
-              <motion.div
+              <Talk
                 key={t.title}
-                initial={{ x: 300, opacity: 0 }}
-                animate={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: .5, delay: i * 0.05 },
-                }}
-                exit={{
-                  x: -300,
-                  opacity: 0,
-                  transition: { duration: .3, delay: 0 },
-                }}
-                className="flex"
-              >
-                <div className="basis-1/6 bg-sex-red-8 p-8 rounded-l-md flex items-center justify-center text-sm lg:text-lg font-bold leading-none text-center text-white">
-                  {t.hour}
-                </div>
-                <div className="flex-1 bg-sex-red-6 min-h-[100px] flex py-4 px-8 flex-col rounded-r-md">
-                  <h3 className="text-lg lg:text-xl font-bold">{t.title}</h3>
-                  <p className="max-w-3/4 leading-tight">
-                    {t.description}
-                  </p>
-
-                  <Guests
-                    guest_ids={t.guest_ids}
-                    onClick={(ids: string[]) => setSelectedGuests(ids)}
-                  />
-                </div>
-              </motion.div>
+                idx={i}
+                title={t.title}
+                description={t.description}
+                hour={t.hour}
+                guests_ids={t.guest_ids}
+                onClickGuests={(ids) => setSelectedGuests(ids)}
+              />
             ))}
         </AnimatePresence>
       </div>

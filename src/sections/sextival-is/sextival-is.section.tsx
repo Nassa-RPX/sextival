@@ -33,7 +33,7 @@ export const SextivalIs = () => {
 
       <div className="lg:w-3/4 mx-auto lg:text-center text-lg lg:text-2xl">
         Rifacendosi alle linee guida dell’Organizzazione Mondiale della Sanità
-        (OMS), vuole colmare il divario tra la realtà del nostro territorio e
+        (OMS), vuole colmare il divario tra la realtà del territorio ligure e
         l’attuale definizione di salute sessuale e i relativi diritti sessuali.
       </div>
 
