@@ -1,4 +1,5 @@
 // import { PropsWithChildren } from "react";
+import { LinkIcon } from "@sextival/components/icon";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -16,6 +17,13 @@ export const Markdown = ({ content }: Props) => (
       ul: (options) => {
         return (
           <ul className="list-disc list-inside ml-2">{options.children}</ul>
+        );
+      },
+      a: (options) => {
+        return (
+          <a className="flex items-center font-bold gap-2" href={options.href}>
+            <span>Clicca qui</span> <LinkIcon />
+          </a>
         );
       },
     }}

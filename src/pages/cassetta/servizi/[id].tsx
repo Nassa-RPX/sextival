@@ -18,7 +18,7 @@ const Servizio: NextPage<
 
   return (
     <Page>
-      <section className="flex flex-col gap-2 lg:w-3/4 text-lg">
+      <section className="flex flex-col gap-4 lg:w-3/4 text-lg">
         <div
           className="flex items-center gap-2"
           onClick={() => router.push("/cassetta/servizi")}
@@ -32,7 +32,9 @@ const Servizio: NextPage<
         </h2>
 
         {service && <Tag service={service} />}
-        {content.parent && <Markdown content={content.parent} />}
+        <div className="w-full flex flex-col gap-4 leading-snug">
+          {content.parent && <Markdown content={content.parent} />}
+        </div>
       </section>
     </Page>
   );
