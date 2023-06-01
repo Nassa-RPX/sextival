@@ -11,8 +11,6 @@ export const getSchedule = async (): Promise<Schedule | undefined> => {
       direction: "ascending",
     }],
   });
-  
-  console.log('raw', rawSchedule)
-  
+
   return mapping(rawSchedule);
 };

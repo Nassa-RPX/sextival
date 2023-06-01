@@ -22,3 +22,9 @@ export type Type = "Workshop" | "Intervento";
 export type Day = 17 | 18;
 
 export type GroupedSchedule = Record<Day, Record<Type, Talk[]>>;
+
+export interface Service {
+  id: string;
+  name: string;
+  zone: string;
+}

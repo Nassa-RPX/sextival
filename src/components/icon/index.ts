@@ -13,3 +13,5 @@ export { QuoteIcon } from "./quote.icon";
 export { HammerIcon } from "./hammer.icon";
 export { MicrophoneIcon } from "./microphone.icon";
 export { InfoIcon } from "./info.icon";
+export { LeftIcon } from "./left.icon";
+export { LinkIcon } from "./link.icon";

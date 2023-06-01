@@ -25,6 +25,7 @@ export const PAGES: Pages = [
     subLinks: [
       { label: "Obiettivi", link: "/cassetta/obiettivi" },
       { label: "La Cassetta", link: "/cassetta/la-cassetta" },
+      { label: "Servizi", link: "/cassetta/servizi" },
     ],
   },
 
