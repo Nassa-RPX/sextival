@@ -1,13 +1,14 @@
+import { GetServerSideProps, NextPage } from "next";
+import { useRouter } from "next/router";
+import { NotionToMarkdown } from "notion-to-md";
+import { MdStringObject } from "notion-to-md/build/types";
+
 import { LeftIcon } from "@sextival/components/icon";
 import client from "@sextival/server/client";
 import { getService } from "@sextival/server/lib";
 import { Service } from "@sextival/server/types";
 import { Markdown } from "@sextival/ui/markdown";
 import { Page } from "@sextival/ui/page";
-import { GetServerSideProps, NextPage } from "next";
-import { useRouter } from "next/router";
-import { NotionToMarkdown } from "notion-to-md";
-import { MdStringObject } from "notion-to-md/build/types";
 
 const Servizio: NextPage<
   { service?: Partial<Service>; content: MdStringObject }

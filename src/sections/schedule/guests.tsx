@@ -1,5 +1,5 @@
 import { useFetch } from "@sextival/hooks";
-import { mapping } from "@sextival/server/mappings/mapping-guest";
+import { guest as guestMapping } from "@sextival/server/mappings";
 import { Guest as IGuest } from "@sextival/server/types";
 import { Avatar } from "@sextival/ui/avatar/avatar.ui";
 import { getInitials } from "@sextival/utils";
@@ -25,7 +25,7 @@ export const Guests = ({ guest_ids, onClick }: Props) => {
 const Guest = ({ id, isFirst }: { id: string; isFirst: boolean }) => {
   const guest = useFetch<Partial<IGuest> | undefined>(
     `/api/schedule/${id}`,
-    mapping,
+    guestMapping,
   );
 
   return (

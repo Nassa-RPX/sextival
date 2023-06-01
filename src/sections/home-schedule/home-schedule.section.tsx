@@ -1,14 +1,14 @@
 import { useFetch } from "@sextival/hooks";
-import { mapping } from "@sextival/server/mappings/mapping-schedule";
 import { GroupedSchedule } from "@sextival/server/types";
 import { Heading } from "@sextival/ui/heading";
 import { Section } from "@sextival/ui/section";
 import { groupBy } from "@sextival/utils";
 import { useEffect, useState } from "react";
 import { Schedule } from "../schedule";
+import { schedule as scheduleMapping} from '@sextival/server/mappings/schedule.mapping'
 
 export const HomeSchedule = () => {
-  const { data } = useFetch("/api/schedule", mapping);
+  const { data } = useFetch("/api/schedule", scheduleMapping);
   const [schedule, setSchedule] = useState<GroupedSchedule | undefined>(
     undefined,
   );

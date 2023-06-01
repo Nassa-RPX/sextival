@@ -1,6 +1,10 @@
-import { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
+import {
+  GetPageResponse,
+  QueryDatabaseResponse,
+} from "@notionhq/client/build/src/api-endpoints";
+import { Guest } from "../types";
 
-export const mapping = (partial: GetPageResponse) => {
+export const guest = (partial: GetPageResponse) => {
   if ("properties" in partial) {
     const properties = partial.properties;
     const Nome = properties.Nome!;
@@ -39,3 +43,10 @@ export const mapping = (partial: GetPageResponse) => {
     };
   }
 };
+
+export const guests = (response: QueryDatabaseResponse): Array<Guest> =>
+  response.results.map((
+    partial,
+  ) => guest(partial)).filter((v): v is Guest =>
+    !!v && !!v.name && !!v.cover && !!v.description
+  );

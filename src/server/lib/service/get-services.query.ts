@@ -1,6 +1,6 @@
-import client from "../client";
-import { SERVICES } from "../notion-dabatase";
-import { mapping } from "../mappings/mapping-services";
+import client from "@sextival/server/client";
+import { services } from "@sextival/server/mappings";
+import { SERVICES } from "@sextival/server/notion-dabatase";
 
 export const getServices = async () => {
   const rawSchedule = await client.databases.query({
@@ -11,5 +11,5 @@ export const getServices = async () => {
     }],
   });
 
-  return mapping(rawSchedule);
+  return services(rawSchedule);
 };

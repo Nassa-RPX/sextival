@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { useFetch } from "@sextival/hooks";
-import { mapping } from "@sextival/server/mappings/mapping-guest";
+import { guest as mappingGuest} from "@sextival/server/mappings/";
 import { Guest as IGuest } from "@sextival/server/types";
 import { Avatar } from "@sextival/ui/avatar/avatar.ui";
 import { getInitials } from "@sextival/utils";
@@ -23,7 +23,7 @@ export const ModalGuests = ({ guest_ids }: Props) => {
 const Guest = ({ id }: { id: string }) => {
   const guest = useFetch<Partial<IGuest> | undefined>(
     `/api/schedule/${id}`,
-    mapping,
+    mappingGuest,
   );
 
   return (

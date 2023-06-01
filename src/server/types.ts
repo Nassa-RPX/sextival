@@ -28,3 +28,9 @@ export interface Service {
   name: string;
   zone: string;
 }
+
+export interface Info {
+  id: string;
+  name: string;
+  description: string;
+}

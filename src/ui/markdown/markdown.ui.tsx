@@ -12,8 +12,9 @@ export const Markdown = ({ content }: Props) => (
   <ReactMarkdown
     remarkPlugins={[remarkGfm]}
     components={{
+      h2: (options) => <h2 className="mt-4 text-3xl">{options.children}</h2>,
       h3: (options) => {
-        return <h3 className="mt-4 text-2xl">{options.children}</h3>;
+        return <h3 className="mt-2 text-2xl">{options.children}</h3>;
       },
       ul: (options) => {
         return (
@@ -22,14 +23,17 @@ export const Markdown = ({ content }: Props) => (
       },
       a: (options) => {
         return (
-          <a className="flex items-center font-bold gap-2" href={options.href}>
-            <span>Clicca qui</span> <LinkIcon />
-          </a>
+          <div className="inline-block">
+            <a
+              className="flex items-center font-bold gap-2"
+              href={options.href}
+            >
+              <span>{options.children}</span> <LinkIcon />
+            </a>
+          </div>
         );
       },
       li: (options) => {
-        console.log("options", options);
-
         return (
           <>
             {Array.isArray(options.children)

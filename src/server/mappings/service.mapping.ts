@@ -1,6 +1,13 @@
 import { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
+import { Service } from "../types";
 
-export const mapping = (partial: GetPageResponse) => {
+export const services = (services: QueryDatabaseResponse): Array<Service> =>
+  services.results.map((partial) => service(partial)).filter((
+    s,
+  ): s is Service => !!s && !!s.name && !!s.zone);
+
+export const service = (partial: GetPageResponse) => {
   if ("properties" in partial) {
     const properties = partial.properties;
     const Nome = properties.Nome;

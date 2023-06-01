@@ -1,7 +1,11 @@
-export { getGuests } from "./get-guests.query";
-export { getGuest } from "./get-guest.query";
-
-export { getSchedule } from "./get-schedule.query";
-
-export { getServices } from "./get-services.query";
-export { getService } from "./get-service.query";
+// GUEST
+export { getGuest } from "./guest/get-guest.query";
+export { getGuests } from "./guest/get-guests.query";
+// SCHEDULE
+export { getSchedule } from "./schedule/get-schedule.query";
+// SERVICE
+export { getService } from "./service/get-service.query";
+export { getServices } from "./service/get-services.query";
+// INFOS
+export { getInfos } from "./info/get-infos.query";
+export { getInfo } from "./info/get-info.query";

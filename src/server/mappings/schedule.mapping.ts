@@ -1,6 +1,14 @@
 import { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 
-export const mapping = (partial: GetPageResponse) => {
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
+import { Schedule, Talk } from "../types";
+
+export const schedule = (schedule: QueryDatabaseResponse): Schedule =>
+  schedule.results.map((partial) => talk(partial)).filter((v): v is Talk =>
+    !!v && !!v.title && !!v.type && !!v.day && !!v.hour
+  );
+
+export const talk = (partial: GetPageResponse) => {
   if ("properties" in partial) {
     const p = partial.properties;
 
@@ -12,7 +20,7 @@ export const mapping = (partial: GetPageResponse) => {
     ) {
       // description = Descrizione.rich_text[0]?.plain_text;
       const plainT = Descrizione.rich_text.map((t) => t.plain_text);
-      description = plainT.join('')
+      description = plainT.join("");
     }
 
     const Titolo = p.Titolo;
