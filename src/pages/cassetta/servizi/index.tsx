@@ -21,7 +21,7 @@ const Servizi: NextPage<{ services: Array<Service> }> = (
   );
 
   return (
-    <Page title="Servizi">
+    <Page title="SERVIZI">
       <div className="flex border-2 border-sex-red-8 bg-sex-red-4 rounded-md overflow-x-auto whitespace-nowrap">
         {Object.keys(groupedServices).map((zone, id) => (
           <span

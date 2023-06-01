@@ -9,3 +9,5 @@ export { getServices } from "./service/get-services.query";
 // INFOS
 export { getInfos } from "./info/get-infos.query";
 export { getInfo } from "./info/get-info.query";
+// GLOSSARY
+export { getGlossary } from "./glossary/get-glossary.query";

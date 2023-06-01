@@ -34,3 +34,9 @@ export interface Info {
   name: string;
   description: string;
 }
+
+export interface Glossary {
+  id: string;
+  name: string;
+  description: string;
+}

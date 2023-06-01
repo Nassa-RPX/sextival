@@ -9,7 +9,7 @@ import { LinkIcon, RightIcon } from "@sextival/components/icon";
 const Informazioni: NextPage<{ infos: Array<Info> }> = ({ infos }) => {
   console.log("infos", infos);
   return (
-    <Page title="Informazioni">
+    <Page title="INFORMAZIONI">
       <section className="grid lg:grid-cols-2 gap-4">
         {infos.map((info) => (
           <div
