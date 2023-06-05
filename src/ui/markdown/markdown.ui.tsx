@@ -12,9 +12,11 @@ export const Markdown = ({ content }: Props) => (
   <ReactMarkdown
     remarkPlugins={[remarkGfm]}
     components={{
-      h2: (options) => <h2 className="mt-4 text-3xl">{options.children}</h2>,
+      h2: (options) => (
+        <h2 className="mt-4 text-3xl text-left">{options.children}</h2>
+      ),
       h3: (options) => {
-        return <h3 className="mt-2 text-2xl">{options.children}</h3>;
+        return <h3 className="mt-2 text-2xl text-left">{options.children}</h3>;
       },
       ul: (options) => {
         return (

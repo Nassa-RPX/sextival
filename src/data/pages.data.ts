@@ -23,7 +23,6 @@ export const PAGES: Pages = [
   {
     label: "CASSETTA DEGLI ATTREZZI",
     subLinks: [
-      { label: "Obiettivi", link: "/cassetta/obiettivi" },
       { label: "La Cassetta", link: "/cassetta/la-cassetta" },
 
       { label: "Informazioni utili", link: "/cassetta/informazioni" },
