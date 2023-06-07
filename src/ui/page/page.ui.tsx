@@ -27,7 +27,13 @@ export const Page = ({ children, className, title, meta }: Props) => {
           />
         )}
       </Head>
-      <div className={clsx("flex flex-col", !title && "mt-[80px]", className)}>
+      <div
+        className={clsx(
+          "flex flex-col overflow-x-hidden",
+          !title && "mt-[80px]",
+          className,
+        )}
+      >
         {title && (
           <div
             className={clsx(

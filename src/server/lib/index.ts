@@ -11,3 +11,5 @@ export { getInfos } from "./info/get-infos.query";
 export { getInfo } from "./info/get-info.query";
 // GLOSSARY
 export { getGlossary } from "./glossary/get-glossary.query";
+
+export { getPage } from "./get-page.query";

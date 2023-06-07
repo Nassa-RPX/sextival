@@ -1,3 +1,5 @@
+import { MdStringObject } from "notion-to-md/build/types";
+
 export interface Guest {
   name: string;
   description: string;
@@ -40,3 +42,5 @@ export interface Glossary {
   name: string;
   description: string;
 }
+
+export type NotionPage = MdStringObject;

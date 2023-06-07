@@ -1,16 +1,19 @@
 import { LinkIcon } from "@sextival/components/icon";
-import { getServices } from "@sextival/server/lib";
-import { Service } from "@sextival/server/types";
-import { Page } from "@sextival/ui/page";
-import { Spacer } from "@sextival/ui/spacer";
-import { groupBy } from "@sextival/utils";
+import { getPage, getServices } from "@sextival/server/lib";
+import { PAGES } from "@sextival/server/notion-dabatase";
 import clsx from "clsx";
 import { NextPage } from "next";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 
-const Servizi: NextPage<{ services: Array<Service> }> = (
-  { services },
+import { NotionPage, Service } from "@sextival/server/types";
+import { Markdown } from "@sextival/ui/markdown";
+import { Page } from "@sextival/ui/page";
+import { Spacer } from "@sextival/ui/spacer";
+import { groupBy } from "@sextival/utils";
+
+const Servizi: NextPage<{ services: Array<Service>; content: NotionPage }> = (
+  { services, content },
 ) => {
   const groupedServices = useMemo(() => {
     return groupBy(services, (s) => s.zone);
@@ -22,6 +25,14 @@ const Servizi: NextPage<{ services: Array<Service> }> = (
 
   return (
     <Page title="SERVIZI">
+      {content && content.parent && (
+        <div className="w-full flex flex-col gap-4 leading-snug">
+          <Markdown content={content.parent} />
+        </div>
+      )}
+
+      <Spacer type="y" dimension="md" />
+
       <div className="flex border-2 border-sex-red-8 bg-sex-red-4 rounded-md overflow-x-auto whitespace-nowrap">
         {Object.keys(groupedServices).map((zone, id) => (
           <span
@@ -67,11 +78,13 @@ const Servizi: NextPage<{ services: Array<Service> }> = (
 export async function getServerSideProps() {
   // Get the posts
 
+  const content = await getPage(PAGES.SERVICES);
   const services = await getServices();
 
   // Return the result
   return {
     props: {
+      content,
       services,
     },
   };

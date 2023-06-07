@@ -1,15 +1,27 @@
 import { NextPage } from "next";
 
-import { getInfos } from "@sextival/server/lib";
-import { Info } from "@sextival/server/types";
+import { getInfos, getPage } from "@sextival/server/lib";
+import { Info, NotionPage } from "@sextival/server/types";
 import { Page } from "@sextival/ui/page";
 import Link from "next/link";
 import { LinkIcon, RightIcon } from "@sextival/components/icon";
+import { PAGES } from "@sextival/server/notion-dabatase";
+import { Markdown } from "@sextival/ui/markdown";
+import { Spacer } from "@sextival/ui/spacer";
 
-const Informazioni: NextPage<{ infos: Array<Info> }> = ({ infos }) => {
-  console.log("infos", infos);
+const Informazioni: NextPage<{ infos: Array<Info>; content: NotionPage }> = (
+  { infos, content },
+) => {
   return (
     <Page title="INFORMAZIONI">
+      {content && content.parent && (
+        <div className="w-full flex flex-col gap-4 text-justify leading-snug">
+          <Markdown content={content.parent} />
+        </div>
+      )}
+
+      <Spacer type="y" dimension="md" />
+
       <section className="grid lg:grid-cols-2 gap-4">
         {infos.map((info) => (
           <div
@@ -43,11 +55,13 @@ const Informazioni: NextPage<{ infos: Array<Info> }> = ({ infos }) => {
 export async function getServerSideProps() {
   // Get the posts
 
+  const content = await getPage(PAGES.INFO);
   const infos = await getInfos();
 
   // Return the result
   return {
     props: {
+      content,
       infos,
     },
   };

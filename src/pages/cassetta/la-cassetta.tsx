@@ -1,12 +1,11 @@
-import client from "@sextival/server/client";
-import { DETAILS } from "@sextival/server/notion-dabatase";
+import { getPage } from "@sextival/server/lib";
+import { PAGES } from "@sextival/server/notion-dabatase";
+import { NotionPage } from "@sextival/server/types";
 import { Markdown } from "@sextival/ui/markdown";
 import { Page } from "@sextival/ui/page";
 import { GetServerSideProps, NextPage } from "next";
-import { NotionToMarkdown } from "notion-to-md";
-import { MdStringObject } from "notion-to-md/build/types";
 
-const LaCassetta: NextPage<{ content: MdStringObject }> = ({ content }) => {
+const LaCassetta: NextPage<{ content: NotionPage }> = ({ content }) => {
   return (
     <Page title="LA CASSETTA">
       <div className="w-full flex flex-col gap-4 leading-snug">
@@ -17,14 +16,11 @@ const LaCassetta: NextPage<{ content: MdStringObject }> = ({ content }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const n2m = new NotionToMarkdown({ notionClient: client });
-  const mdblocks = await n2m.pageToMarkdown(DETAILS);
-  const mdString = n2m.toMarkdownString(mdblocks);
-
   // Return the result
+  const content = await getPage(PAGES.DETAILS);
   return {
     props: {
-      content: mdString,
+      content,
     },
   };
 };

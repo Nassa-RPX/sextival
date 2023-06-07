@@ -74,7 +74,7 @@ export const Schedule = ({ schedule, centered }: Props) => {
       <Spacer type="y" dimension="md" />
       <div
         className={clsx(
-          "flex flex-col gap-2 overflow-hidden",
+          "flex flex-col gap-4 lg:gap-2 overflow-hidden",
           centered && "lg:w-4/5 mx-auto ",
         )}
       >

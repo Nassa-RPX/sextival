@@ -3,14 +3,13 @@ import type { AppType } from "next/dist/shared/lib/utils";
 
 import "../styles/globals.css";
 import RoutingProgress from "nextjs-progressbar";
+
 import { AnimatePresence } from "framer-motion";
 
 import { Header } from "@sextival/components/header";
 
-const App: AppType = ({
-  Component,
-  pageProps: { session, ...pageProps },
-}) => {
+const App: AppType = ({ Component, pageProps: { _, ...pageProps } }) => {
+  
   return (
     <AnimatePresence mode="wait">
       <RoutingProgress />

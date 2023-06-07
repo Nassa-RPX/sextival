@@ -13,7 +13,7 @@ interface Props extends DefaultProps {
 export const Avatar = ({ isLoading, isFirst, img, alt, className }: Props) => {
   const avatarClassName = useMemo(() =>
     clsx(
-      "w-[40px] h-[40px] rounded-full relative border-2 border-sex-red-4 bg-sex-red-2 text-xs text-sex-red-8 font-bold",
+      "w-[40px] h-[40px] rounded-full relative border-2 border-sex-blue-4 bg-sex-blue-2 text-xs text-sex-blue-8 font-bold",
       !isFirst && " ml-[-20px]",
       className,
     ), [isFirst]);
