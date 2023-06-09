@@ -1,10 +1,9 @@
 import client from "@sextival/server/client";
 import { schedule } from "@sextival/server/mappings";
 import { SCHEDULE } from "@sextival/server/notion-dabatase";
-import { Schedule } from "@sextival/server/types";
 
-export const getSchedule = async (): Promise<Schedule | undefined> => {
-  const rawSchedule = await client.databases.query({
+export const getSchedule = async () => {
+  const raw = await client.databases.query({
     database_id: SCHEDULE,
     sorts: [{
       property: "Ore",
@@ -12,5 +11,5 @@ export const getSchedule = async (): Promise<Schedule | undefined> => {
     }],
   });
 
-  return schedule(rawSchedule);
+  return schedule(raw);
 };

@@ -10,13 +10,21 @@ import { Schedule as ScheduleSection } from "@sextival/sections/schedule";
 
 const Programma: NextPage<{ schedule: Schedule }> = ({ schedule }) => {
   const groupedSchedule: GroupedSchedule = useMemo(() => {
-    const grouped = groupBy(schedule, (s) => s.day);
+    const grouped = groupBy(schedule || [], (s) => s.day);
 
     return {
-      17: groupBy(grouped["Giorno 1"]!, (i) => i.type),
-      18: groupBy(grouped["Giorno 2"]!, (i) => i.type),
+      17: groupBy(
+        grouped["Giorno 1"] ? grouped["Giorno 1"] : [],
+        (i) => i.type,
+      ),
+      18: groupBy(
+        grouped["Giorno 2"] ? grouped["Giorno 2"] : [],
+        (i) => i.type,
+      ),
     };
   }, [schedule]);
+
+  if (!schedule || schedule.length === 0) return <span>Error</span>;
 
   return (
     <Page title="PROGRAMMA">
