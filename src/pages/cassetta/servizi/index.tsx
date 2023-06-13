@@ -16,7 +16,12 @@ const Servizi: NextPage<{ services: Array<Service>; content: NotionPage }> = (
   { services, content },
 ) => {
   const groupedServices = useMemo(() => {
-    return groupBy(services, (s) => s.zone);
+    const g = groupBy(services, (s) => s.zone);
+    const s: Record<string, Service[]> = {};
+    Object.entries(g).forEach(([key, service]) => {
+      s[key] = service.sort((a, b) => a.order > b.order ? 1 : -1);
+    });
+    return s;
   }, [services]);
 
   const [zoneSelected, setZoneSeletected] = useState<string | undefined>(

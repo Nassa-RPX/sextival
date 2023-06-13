@@ -29,6 +29,7 @@ export interface Service {
   id: string;
   name: string;
   zone: string;
+  order: number;
 }
 
 export interface Info {

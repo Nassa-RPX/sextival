@@ -27,7 +27,7 @@ export const PAGES: Pages = [
 
       { label: "Informazioni utili", link: "/cassetta/informazioni" },
       { label: "Servizi", link: "/cassetta/servizi" },
-      { label: "Glossario", link: "/cassetta/glossario" },
+      // { label: "Glossario", link: "/cassetta/glossario" },
     ],
   },
 
