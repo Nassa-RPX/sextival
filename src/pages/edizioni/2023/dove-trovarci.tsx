@@ -30,7 +30,7 @@ const ComeTrovarci = () => {
         </h1>
         <div className="flex gap-4">
           <VideoLocation url={LOCATION.VIDEOS.highway}>
-            Dall'uscita autostradale
+            Dall&apos;uscita autostradale
           </VideoLocation>
 
           <VideoLocation url={LOCATION.VIDEOS.station}>
