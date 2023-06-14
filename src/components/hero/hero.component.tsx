@@ -1,4 +1,3 @@
-import { Spacer } from "@sextival/ui/spacer";
 import Radials from "../radials";
 import { Blob } from "./blob.component";
 import { HeroCta } from "./hero-cta.component";
@@ -28,10 +27,6 @@ export const Hero = () => {
           </h1>
 
           <HeroCta />
-          
-          <div className="xl:absolute xl:left-1/2 xl:-translate-x-1/2">
-            <span>dove trovarci</span>
-          </div>
         </div>
 
         <div className="flex items-center justify-center lg:justify-end lg:flex-1 mt-[80px] lg:mt-0 order-1 lg:order-2">
