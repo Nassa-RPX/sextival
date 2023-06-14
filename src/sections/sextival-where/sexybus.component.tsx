@@ -9,12 +9,12 @@ export const Sexybus = () => {
   const location = useMemo(() => LOCATION.SEXYBUS[selected - 1], [selected]);
 
   return (
-    <section className="flex flex-col gap-4 items-center pb-4">
+    <section className="flex flex-col gap-8 items-center pb-4">
       <h1 className="text-6xl font-bold bg-sex-gradient-text text-transparent bg-clip-text leading-none">
         SEXYBUS
       </h1>
 
-      <p className="text-justify">
+      <p className="xl:w-1/3 mx-auto text-justify">
         Il <strong>SEXYBUS</strong> é un servizio <strong>gratuito</strong>{" "}
         messo a disposizione dallo staff per portarvi al Sextival (e indietro!).
         La tratta è dalla stazione alla location dell&apos;evento. Abbiamo
@@ -52,8 +52,11 @@ export const Sexybus = () => {
       </div>
 
       <div className="lg:w-1/3 p-4 rounded-md bg-sex-blue-2 bg-opacity-40 ">
-        OPPURE POTETE USUFRUIRE DELLE CORSE DEL GENTILISSIMO, MA MENO ROSA, BUS
-        NUMERO 798 info{" "}
+        OPPURE POTETE USUFRUIRE DELLE CORSE DEL GENTILISSIMO, MA MENO ROSA,{" "}
+        <strong>
+          BUS NUMERO 798
+        </strong>{" "}
+        info{" "}
         <a className="font-bold" href="http://www.amt.genova.it/amt/">
           amt.genova.it/amt/
         </a>
