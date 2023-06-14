@@ -15,3 +15,4 @@ export { MicrophoneIcon } from "./microphone.icon";
 export { InfoIcon } from "./info.icon";
 export { LeftIcon } from "./left.icon";
 export { LinkIcon } from "./link.icon";
+export { MapIcon  } from './map.icon';

@@ -8,6 +8,7 @@ import { Heading } from "../heading";
 interface Props extends DefaultProps {
   title?: React.ReactNode;
   meta?: {
+    title?: string;
     description?: string;
   };
 }
@@ -16,8 +17,10 @@ export const Page = ({ children, className, title, meta }: Props) => {
   return (
     <>
       <Head>
-        {typeof title === "string"
+        {title && typeof title === "string"
           ? <title>Sextival - {toTitleCase(title)}</title>
+          : meta && meta.title
+          ? <title>{meta.title}</title>
           : <title>Sextival</title>}
 
         {meta && meta.description && (
@@ -29,7 +32,7 @@ export const Page = ({ children, className, title, meta }: Props) => {
       </Head>
       <div
         className={clsx(
-          "flex flex-col overflow-x-hidden mb-10",
+          "flex flex-col  mb-10",
           !title && "mt-[80px]",
           className,
         )}
@@ -40,7 +43,10 @@ export const Page = ({ children, className, title, meta }: Props) => {
               "mt-[60px] h-[100px] flex items-center justify-center",
             )}
           >
-            <Heading order={1} className="text-sex-red-4 text-4xl lg:text-6xl">
+            <Heading
+              order={1}
+              className="text-sex-red-4 text-4xl lg:text-6xl bg-sex-gradient-text text-transparent bg-clip-text"
+            >
               {title}
             </Heading>
           </div>

@@ -16,6 +16,7 @@ export const PAGES: Pages = [
   {
     label: "EDIZIONE 2023",
     subLinks: [
+      { label: "Dove Trovarci", link: "edizioni/2023/dove-trovarci" },
       { label: "Il Programma", link: "/edizioni/2023/programma" },
       { label: "Lə Ospitə", link: "edizioni/2023/ospiti" },
     ],
