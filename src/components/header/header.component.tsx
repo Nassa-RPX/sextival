@@ -58,7 +58,7 @@ export const Header = () => {
       <motion.div
         ref={ref}
         className={clsx(
-          "fixed left-0 right-0 h-[60px] mx-[5%] px-[5%] lg:mx-[10%] lg:px-8 flex justify-between items-center transition-colors z-10 rounded-md",
+          "fixed left-0 right-0 h-[60px] mx-[2%] px-[5%] lg:mx-[10%] lg:px-8 flex justify-between items-center transition-colors z-10 rounded-md",
           isScrolled &&
             "bg-sex-blue-4 lg:bg-sex-blue-0 bg-opacity-50 lg:bg-opacity-75 backdrop-blur-md ",
         )}

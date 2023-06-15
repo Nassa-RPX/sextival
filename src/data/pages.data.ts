@@ -25,9 +25,12 @@ export const PAGES: Pages = [
     label: "CASSETTA DEGLI ATTREZZI",
     subLinks: [
       { label: "La Cassetta", link: "/cassetta/la-cassetta" },
-
       { label: "Informazioni utili", link: "/cassetta/informazioni" },
       { label: "Servizi", link: "/cassetta/servizi" },
+      {
+        label: "Questionario",
+        link: "/cassetta/questionario-2023",
+      },
       // { label: "Glossario", link: "/cassetta/glossario" },
     ],
   },

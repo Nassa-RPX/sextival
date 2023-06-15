@@ -45,7 +45,7 @@ export const Page = ({ children, className, title, meta }: Props) => {
           >
             <Heading
               order={1}
-              className="text-sex-red-4 text-4xl lg:text-6xl bg-sex-gradient-text text-transparent bg-clip-text"
+              className="text-sex-red-4 text-4xl lg:text-6xl bg-sex-gradient-text text-transparent bg-clip-text text-center"
             >
               {title}
             </Heading>

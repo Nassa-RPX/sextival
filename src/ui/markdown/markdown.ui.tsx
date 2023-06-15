@@ -25,14 +25,12 @@ export const Markdown = ({ content }: Props) => (
       },
       a: (options) => {
         return (
-          <div className="inline-block">
-            <a
-              className="flex items-center font-bold gap-2"
-              href={options.href}
-            >
-              <span>{options.children}</span> <LinkIcon />
-            </a>
-          </div>
+          <a
+            className="font-medium text-sex-blue-6"
+            href={options.href}
+          >
+            {options.children} <LinkIcon className="inline-block" />
+          </a>
         );
       },
       li: (options) => {
@@ -57,6 +55,18 @@ export const Markdown = ({ content }: Props) => (
           </>
         );
       },
+      img: (options) => {
+        return (
+          <div className="relative w-full xl:w-1/3 xl:mx-auto my-4">
+            <img
+              src={options.src}
+              alt={options.alt}
+              className="object-cover w-full h-full"
+            />
+          </div>
+        );
+      },
+      p: (options) => <p className="mb-1">{options.children}</p>,
     }}
   >
     {content}
