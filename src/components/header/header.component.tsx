@@ -1,3 +1,5 @@
+"use client";
+
 import React, { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import clsx from "clsx";
@@ -15,7 +17,7 @@ import {
   useScrollLock,
 } from "@sextival/hooks";
 import { Dropdown } from "../dropdown/dropdown.component";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 
 const variants: Variants = {
   base: {
@@ -46,7 +48,7 @@ export const Header = () => {
   const { lock } = useScrollLock(false);
 
   const [openNav, setOpenNav] = useState(false);
-  const { pathname } = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     lock(false);
@@ -66,10 +68,11 @@ export const Header = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={isScrolled ? "scrolled" : "base"}
       >
-        <Link href="/">
-          <a className="text-2xl lg:text-4xl font-black text-sex-blue">
-            SEXTIVAL
-          </a>
+        <Link
+          href="/"
+          className="text-2xl lg:text-4xl font-black text-sex-blue"
+        >
+          SEXTIVAL
         </Link>
 
         <div

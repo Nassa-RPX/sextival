@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 
 import { AccordionData } from "./accordion.types";
@@ -7,6 +9,7 @@ interface Props {
   data: Array<AccordionData>;
 }
 
+// TODO: better animation on closing
 export const Accordion = ({ data }: Props) => {
   const [expanded, setExpanded] = useState<false | number>(false);
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { GridData } from "./types";
 
 interface GridProps {
@@ -27,6 +29,7 @@ const GridEl = ({ data }: GridElProps) => {
     <div className="flex flex-col">
       <div className="flex gap-3 items-center">
         {data.icon()}
+        
         <dt className="text-lg font-medium">{data.title}</dt>
       </div>
       <dd className="mt-2 text-justify">{data.description}</dd>

@@ -1,14 +1,12 @@
-import { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
-
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
-import { Schedule, Talk } from "../types";
+import { NotionResult, Schedule, Talk } from "../types";
 
 export const schedule = (schedule: QueryDatabaseResponse): Schedule =>
   schedule.results.map((partial) => talk(partial)).filter((v): v is Talk =>
     !!v && !!v.title && !!v.type && !!v.day && !!v.hour
   );
 
-export const talk = (partial: GetPageResponse) => {
+export const talk = (partial: NotionResult) => {
   if ("properties" in partial) {
     const p = partial.properties;
 
@@ -26,31 +24,44 @@ export const talk = (partial: GetPageResponse) => {
     const Titolo = p.Titolo;
     let title = undefined;
     if (Titolo && Titolo.type === "title" && Titolo.title.length > 0) {
-      title = Titolo.title[0]?.plain_text;
+      title = Array.isArray(Titolo.title) && Titolo.title[0]?.plain_text;
     }
 
     const Giorno = p.Giorno;
     let day = undefined;
-    if (Giorno && Giorno.type === "select" && Giorno.select?.name) {
+    if (
+      Giorno && Giorno.type === "select" && Giorno.select &&
+      !("options" in Giorno.select) &&
+      Giorno.select.name
+    ) {
       day = Giorno.select.name;
     }
 
     const Ore = p.Ore;
     let hour = undefined;
-    if (Ore && Ore.type === "select" && Ore.select?.name) {
+    if (
+      Ore && Ore.type === "select" && Ore.select &&
+      !("options" in Ore.select) && Ore.select.name
+    ) {
       hour = Ore.select.name;
     }
 
     const Tipo = p.Tipo;
     let type = undefined;
-    if (Tipo && Tipo.type === "select" && Tipo.select?.name) {
+    if (
+      Tipo && Tipo.type === "select" && Tipo.select &&
+      !("options" in Tipo.select) && Tipo.select.name
+    ) {
       type = Tipo.select.name;
     }
 
     const Ospiti = p.Ospiti;
     let guest_ids: string[] = [];
 
-    if (Ospiti && Ospiti.type === "relation" && Ospiti.relation.length > 0) {
+    if (
+      Ospiti && Ospiti.type === "relation" && Array.isArray(Ospiti.relation) &&
+      Ospiti.relation.length > 0
+    ) {
       guest_ids = Ospiti.relation.map((v) => v.id);
     }
 

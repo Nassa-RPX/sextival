@@ -1,3 +1,5 @@
+"use client";
+
 import { HammerIcon, MicrophoneIcon } from "@sextival/components/icon";
 import { Day, GroupedSchedule, Type } from "@sextival/server/types";
 

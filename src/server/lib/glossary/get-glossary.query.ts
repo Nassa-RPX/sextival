@@ -7,5 +7,11 @@ export const getGlossary = async () => {
     database_id: GLOSSARY,
   });
 
-  return glossaries(raw);
+  const glossary = glossaries(raw);
+  const accordionGlossary = glossary.map((g) => ({
+    label: g.name,
+    description: g.description,
+  }));
+
+  return { glossary, accordionGlossary };
 };

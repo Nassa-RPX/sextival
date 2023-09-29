@@ -1,3 +1,4 @@
+"use client";
 import { motion, MotionStyle } from "framer-motion";
 import clsx from "clsx";
 

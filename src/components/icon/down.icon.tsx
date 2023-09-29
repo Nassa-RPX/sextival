@@ -1,3 +1,5 @@
+"use client";
+
 import { defaultClassName, IconProps } from "./icon.types";
 import { motion } from "framer-motion";
 

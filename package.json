@@ -10,32 +10,33 @@
     "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   },
   "dependencies": {
-    "@notionhq/client": "^2.2.5",
-    "clsx": "^1.2.1",
-    "framer-motion": "^7.2.1",
-    "next": "12.2.5",
+    "@notionhq/client": "^2.2.13",
+    "clsx": "^2.0.0",
+    "framer-motion": "^10.16.4",
+    "next": "13.5.3",
+    "next13-progressbar": "^1.0.3",
     "nextjs-progressbar": "^0.0.16",
-    "notion-to-md": "^3.0.1",
+    "notion-to-md": "^3.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
-    "remark-gfm": "^3.0.1",
+    "remark-gfm": "^4.0.0",
     "ts-node": "^10.9.1",
     "use-clamp-text": "^1.1.0",
-    "zod": "^3.18.0"
+    "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@types/node": "18.0.0",
-    "@types/react": "18.0.14",
-    "@types/react-dom": "18.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
-    "autoprefixer": "^10.4.8",
-    "eslint": "8.22.0",
-    "eslint-config-next": "12.2.5",
-    "postcss": "^8.4.16",
-    "tailwindcss": "^3.3.2",
-    "typescript": "4.7.4"
+    "@types/node": "20.7.0",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.2.8",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "autoprefixer": "^10.4.16",
+    "eslint": "8.50.0",
+    "eslint-config-next": "13.5.3",
+    "postcss": "^8.4.30",
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.2.2"
   },
   "ct3aMetadata": {
     "initVersion": "5.8.3"

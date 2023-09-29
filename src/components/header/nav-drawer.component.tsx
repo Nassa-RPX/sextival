@@ -12,8 +12,6 @@ interface Props {
 }
 
 export const NavDrawer = ({ open, onClose }: Props) => {
-  
-  
   return (
     <Drawer
       open={open}
@@ -59,16 +57,15 @@ const NavLink = (
     level?: "first" | "second";
   },
 ) => (
-  <Link href={link}>
-    <a
-      className={clsx(
-        "font-bold mt-2 flex items-center gap-2",
-        level === "first" && "mt-4",
-      )}
-    >
-      <span>{label}</span>
+  <Link
+    href={link}
+    className={clsx(
+      "font-bold mt-2 flex items-center gap-2",
+      level === "first" && "mt-4",
+    )}
+  >
+    <span>{label}</span>
 
-      <RightIcon />
-    </a>
+    <RightIcon />
   </Link>
 );

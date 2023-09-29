@@ -1,3 +1,4 @@
+import { DatabaseObjectResponse, PageObjectResponse, PartialDatabaseObjectResponse, PartialPageObjectResponse , RichTextItemResponse} from "@notionhq/client/build/src/api-endpoints";
 import { MdStringObject } from "notion-to-md/build/types";
 
 export interface Guest {
@@ -45,3 +46,8 @@ export interface Glossary {
 }
 
 export type NotionPage = MdStringObject;
+
+export type NotionResult = PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse
+
+export type NotionRichText = RichTextItemResponse;
+

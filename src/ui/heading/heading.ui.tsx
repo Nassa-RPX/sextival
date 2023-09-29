@@ -1,3 +1,4 @@
+
 import { DefaultProps } from "@sextival/types";
 import clsx from "clsx";
 import { useMemo } from "react";
@@ -6,9 +7,9 @@ interface Props extends DefaultProps {
   order: 1 | 2 | 3;
 }
 
-export const Heading = ({ children, className, order }: Props) => {
-  const defaultCN = useMemo(() => "font-bold text-2022-sex-dblue", []);
+const defaultCN =  "font-bold text-2022-sex-dblue";
 
+export const Heading = ({ children, className, order }: Props) => {
   return (
     <>
       {order === 1 && (
