@@ -1,9 +1,9 @@
 import { TAGLINE } from "@sextival/data";
 import { Section } from "@sextival/ui/section";
 import { TextLoop } from "@sextival/components/text-loop";
-import * as Card from "./card.component";
 import { GroupIcon, NetIcon } from "@sextival/components/icon";
 import { Spacer } from "@sextival/ui/spacer";
+import * as Card from "./card.component";
 
 export const SextivalIs = () => {
   return (

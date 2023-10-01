@@ -1,17 +1,17 @@
-import { GetPageResponse } from "@notionhq/client/build/src/api-endpoints";
 import { getGuest } from "@sextival/server/lib";
-import type { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(
-  _req: NextApiRequest,
-  res: NextApiResponse<GetPageResponse>,
+type Params = {params: {id: string}};
+
+export async function GET(
+  _req: Request,
+  context: Params
 ) {
   try {
-    const id = _req.query.id as string;
+    const id = context.params.id;
     const data = await getGuest(id);
 
-    res.status(200).json(data);
+    return new Response(JSON.stringify(data), { status: 200});
   } catch (e) {
-    res.status(500);
+    return new Response(null, {status: 500})
   }
 }

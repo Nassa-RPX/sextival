@@ -1,12 +1,8 @@
-import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
-import type { NextApiRequest, NextApiResponse } from "next";
-
 import client from "@sextival/server/client";
 import { SCHEDULE } from "@sextival/server/notion-dabatase";
 
-export default async function handler(
-  _req: NextApiRequest,
-  res: NextApiResponse<QueryDatabaseResponse>,
+export async function GET(
+  _req: Request,
 ) {
   try {
     const data = await client.databases.query({
@@ -17,8 +13,8 @@ export default async function handler(
       }],
     });
 
-    res.status(200).json(data);
+    return new Response(JSON.stringify(data), {status: 200});
   } catch (e) {
-    res.status(500);
+    return new Response(null, { status: 500});
   }
 }
