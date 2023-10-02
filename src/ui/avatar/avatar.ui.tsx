@@ -29,8 +29,9 @@ export const Avatar = ({ isLoading, isFirst, img, alt, className }: Props) => {
                   className={avatarClassName}
                 >
                   <Image
+                    alt={alt}
                     src={img}
-                    layout="fill"
+                    fill={true}
                     className="rounded-full"
                   />
                 </div>

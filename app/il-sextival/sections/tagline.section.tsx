@@ -11,7 +11,7 @@ export const Tagline = () => (
           src="https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/blob/10.png"
           width={500}
           height={250}
-          objectFit="contain"
+          style={{ objectFit: "contain" }}
           loading="lazy"
         />
       </div>

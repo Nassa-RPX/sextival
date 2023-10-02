@@ -19,9 +19,9 @@ export default async function Guests() {
                 <Image
                   alt={g.name}
                   src={g.cover}
-                  layout="fill"
-                  objectFit="cover"
+                  fill={true}
                   className="rounded-full"
+                  style={{ objectFit: "fill" }}
                 />
               </div>
               <Heading order={2} className="text-xl leading-tight">

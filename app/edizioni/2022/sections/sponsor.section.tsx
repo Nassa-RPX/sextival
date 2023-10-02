@@ -11,7 +11,13 @@ export const Sponsor = () => {
       <div className="mt-4 flex overflow-x-hidden gap-4 items-center">
         {SPONSOR.map((sp) => (
           <div key={sp} className="relative h-[100px] w-full">
-            <Image src={sp} layout="fill" objectFit="contain" loading="lazy" />
+            <Image
+              alt={sp}
+              src={sp}
+              style={{ objectFit: "contain" }}
+              fill={true}
+              loading="lazy"
+            />
           </div>
         ))}
       </div>

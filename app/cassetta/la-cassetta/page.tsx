@@ -41,7 +41,7 @@ const Loghi = () => {
               src={logo}
               alt={logo}
               style={{ objectFit: "contain" }}
-              layout="fill"
+              fill={true}
               className="flex-1"
             />
           </div>

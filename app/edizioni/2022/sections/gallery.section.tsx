@@ -17,8 +17,8 @@ export const Gallery = () => {
             <Image
               src={image}
               alt="Foto dell'edizione 2022"
-              layout="fill"
-              objectFit="cover"
+              fill={true}
+              style={{ objectFit: "cover" }}
               loading="lazy"
             />
           </div>
