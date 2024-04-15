@@ -28,9 +28,7 @@ export default async function Guests() {
                 {g.name}
               </Heading>
             </div>
-            <p className="text-md leading-tight ">
-              {g.description}
-            </p>
+            <p className="text-md leading-tight ">{g.description}</p>
           </div>
         ))}
       </div>

@@ -1,4 +1,3 @@
-
 import Radials from "../radials";
 import { Blob } from "./blob.component";
 import { HeroCta } from "./hero-cta.component";
@@ -12,7 +11,7 @@ export const Hero = () => {
       <div className="min-h-screen relative flex-1 flex flex-col lg:flex-row">
         <div className="flex flex-col lg:justify-center  order-2 lg:order-1">
           <h1 className="text-6xl lg:text-[80px] text-sex-blue-6 font-bold">
-            17 & 18 GIUGNO,
+            22 & 23 GIUGNO,
           </h1>
           <HeroWhere />
 

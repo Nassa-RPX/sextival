@@ -1,7 +1,8 @@
+import Image from "next/image";
+
 import { GRID_IMAGES } from "@sextival/data/2022";
 import { Heading } from "@sextival/ui/heading";
 import { Section } from "@sextival/ui/section";
-import Image from "next/image";
 
 // TODO: metti immagini diverse da quelle in Grid
 // TODO: metti il link al drive / ad una cartella da qualche parte con tutte le foto

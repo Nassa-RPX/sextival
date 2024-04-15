@@ -15,9 +15,7 @@ export const metadata: Metadata = {
   description: "Sextival - il festival dell'educazione e della salute sessuale",
 };
 
-export default function RootLayout({
-  children,
-}: PropsWithChildren) {
+export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body
