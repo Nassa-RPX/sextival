@@ -3,15 +3,10 @@
 import { STATIC_GRID_IMAGES } from "@sextival/data/2022";
 import { FullSection } from "@sextival/ui/section";
 import Image from "next/image";
-import { useState } from "react";
 
 // TODO: parallax on images?
 // TODO: optmizie images for load time
 export const Grid = () => {
-  const [loadingImages, setLoadingImages] = useState(0);
-
-  console.log("loading images", loadingImages);
-
   return (
     <FullSection>
       <div className="flex lg:gap-20">

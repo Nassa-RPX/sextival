@@ -1,8 +1,4 @@
-import { useRouter } from "next/router";
-
-import { LeftIcon } from "@sextival/components/icon";
 import { getInfo, getPage } from "@sextival/server/lib";
-import { Info } from "@sextival/server/types";
 import { Markdown } from "@sextival/ui/markdown";
 import { Page } from "@sextival/ui/page";
 

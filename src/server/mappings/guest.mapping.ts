@@ -23,9 +23,7 @@ export const guest = (partial: GetPageResponse) => {
     const Descrizione = properties.Descrizione!;
 
     let description = undefined;
-    if (
-      Descrizione.type === "rich_text" && Descrizione.rich_text.length > 0
-    ) {
+    if (Descrizione.type === "rich_text" && Descrizione.rich_text.length > 0) {
       description = Descrizione.rich_text[0]!.plain_text;
     }
 
@@ -45,8 +43,7 @@ export const guest = (partial: GetPageResponse) => {
 };
 
 export const guests = (response: QueryDatabaseResponse): Array<Guest> =>
-  response.results.map((
-    partial,
-  ) => guest(partial)).filter((v): v is Guest =>
-    !!v && !!v.name && !!v.cover && !!v.description
-  );
+  response.results
+    //@ts-ignore
+    .map((partial) => guest(partial))
+    .filter((v): v is Guest => !!v && !!v.name && !!v.cover && !!v.description);
