@@ -8,17 +8,17 @@ export const PAGES: Pages = [
   {
     label: "CHI SIAMO",
     subLinks: [
-      { label: "La Nassa", link: "/la-nassa" },
       { label: "Il Sextival", link: "/il-sextival" },
       { label: "Edizione 2022", link: "/edizioni/2022" },
+      { label: "Edizione 2023", link: "ediizioni/2023/programma" },
     ],
   },
   {
-    label: "EDIZIONE 2023",
+    label: "EDIZIONE 2024",
     subLinks: [
-      { label: "Dove Trovarci", link: "/edizioni/2023/dove-trovarci" },
-      { label: "Il Programma", link: "/edizioni/2023/programma" },
-      { label: "Lə Ospitə", link: "/edizioni/2023/ospiti" },
+      { label: "Dove Trovarci", link: "/edizioni/dove-trovarci" },
+      // { label: "Il Programma", link: "/edizioni/2024/programma" },
+      // { label: "Lə Ospitə", link: "/edizioni/2024/ospiti" },
     ],
   },
   {
@@ -31,7 +31,6 @@ export const PAGES: Pages = [
         label: "Questionario",
         link: "/cassetta/questionario-2023",
       },
-      // { label: "Glossario", link: "/cassetta/glossario" },
     ],
   },
 

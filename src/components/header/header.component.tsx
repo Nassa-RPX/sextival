@@ -35,10 +35,10 @@ export const Header = () => {
   const scroll = useScroll();
   const isDesktop = useMediaQuery("lg");
   const scrollThreshold = useMemo(() => 50, []);
-  const isScrolled = useMemo(() => scroll.y > scrollThreshold, [
-    scroll,
-    scrollThreshold,
-  ]);
+  const isScrolled = useMemo(
+    () => scroll.y > scrollThreshold,
+    [scroll, scrollThreshold],
+  );
   const ref = useRef<HTMLDivElement | null>(null);
 
   useOnRouterChange(() => isDesktop && selected && setSelected(undefined));
