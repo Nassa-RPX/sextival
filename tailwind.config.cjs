@@ -55,6 +55,7 @@ module.exports = {
       },
       fontFamily: {
         main: "Poppins, sans-serif",
+        mont: "var(--font-mont)",
         handwriting: "'Dancing Script', cursive",
       },
       boxShadow: {
