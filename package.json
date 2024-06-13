@@ -3,17 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev", 
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+    "lint": "next lint"
   },
   "dependencies": {
     "@notionhq/client": "^2.2.13",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.4",
-    "next": "13.5.3",
+    "next": "13.5.2",
     "next13-progressbar": "^1.0.3",
     "nextjs-progressbar": "^0.0.16",
     "notion-to-md": "^3.1.1",
