@@ -4,31 +4,44 @@ export const Hero = () => {
   return (
     <section className="w-full h-full relative bg-brand-blue overflow-hidden">
       <div className="w-full mx-auto h-screen relative flex-1 flex flex-col">
-        <div className="w-full flex flex-col mt-[80px] lg:mt-[120px]  gap-2 z-10 bg-brand-blue bg-opacity-0 lg:bg-opacity-0 p-6">
-          <h2 className="text-4xl lg:text-[80px] text-brand-rose font-bold text-center drop-shadow-lg">
-            22 e 23 <br className="block lg:hidden" />
+        <div className="w-[94%] left-1/2  md:left-0 -translate-x-1/2 md:translate-x-0 md:w-full flex flex-col gap-2 z-10 absolute top-[140px] md:top-[80px]">
+          <h2 className="text-4xl md:text-[80px] md:leading-[4rem] text-brand-rose font-bold text-center drop-shadow-lg">
+            22 e 23 <br className="block md:hidden" />
             GIUGNO 2024
           </h2>
 
-          <h1 className="text-6xl lg:text-8xl text-white font-black text-center">
+          <h1 className="text-6xl md:text-8xl text-white font-bold text-center">
             SEXTIVAL
           </h1>
-          <h3 className="text-2xl lg:text-4xl text-white font-bold text-center drop-shadow-md">
-            Rapallo, via San Pietro 54 <br /> (Salita Bosen)
+          <h3 className="text-xl md:text-2xl text-white font-bold text-center drop-shadow-md">
+            Rapallo, via San Pietro (Salita Bosen)
           </h3>
         </div>
 
-        <div className="absolute -top-[10%] -left-[20%] -right-[20%] -bottom-[20%] md:top-[25%] md:right-[10%] md:bottom-0 md:left-[10%] overflow-hidden">
-          <div className="relative w-full h-full ">
+        <div className="hidden  relative w-full h-full md:flex items-end">
+          <Image
+            src={"/personaggio-cropped.png"}
+            alt="Illustrazione Sextival"
+            width={900}
+            height={710}
+            className="pointer-events-none mx-auto mt-auto"
+          />
+          <div className="py-4 px-8 lg:px-10 lg:py-10 rounded-2xl shadow-lg bg-brand-rose bg-opacity-80 backdrop-blur-sm text-white border-2 drop-shadow-md border-brand-rose text-xl font-bold absolute bottom-[30%] sm:bottom-[20%] md:bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer z-10 text-center">
+            SCARICA IL PROGRAMMA
+          </div>
+        </div>
+
+        <div className="md:hidden relative w-full h-full flex items-end ">
+          <div className="h-[450px] absolute bottom-5% left-0 right-0">
             <Image
               src={"/personaggio-cropped.png"}
               alt="Illustrazione Sextival"
               fill={true}
-              className="object-contain pointer-events-none"
+              className="object-cover pointer-events-none"
             />
           </div>
 
-          <div className="py-4 px-8 lg:px-10 lg:py-10 rounded-2xl shadow-lg bg-brand-rose bg-opacity-80 backdrop-blur-sm text-white border-2 drop-shadow-md border-brand-rose text-xl font-bold absolute bottom-[30%] sm:bottom-[20%] md:bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer z-10 text-center">
+          <div className="py-4 px-8 lg:px-10 lg:py-10 rounded-2xl shadow-lg bg-brand-rose bg-opacity-80 backdrop-blur-sm text-white border-2 drop-shadow-md border-brand-rose text-xl font-bold absolute bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer z-10 text-center">
             SCARICA IL PROGRAMMA
           </div>
         </div>

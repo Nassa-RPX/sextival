@@ -6,6 +6,7 @@ export type Pages = Array<{
 
 export const PAGES: { main: Pages; other: Pages } = {
   main: [
+    { label: "HOME", link: "/" },
     {
       label: "IL SEXTIVAL",
       link: "/il-sextival",
