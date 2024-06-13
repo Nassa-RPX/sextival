@@ -30,7 +30,11 @@ const variants: Variants = {
   },
 };
 
-export const Header = () => {
+type Props = {
+  type: "home" | "root";
+};
+
+export const Header = ({ type }: Props) => {
   const [selected, setSelected] = useState<string | undefined>(undefined);
   const scroll = useScroll();
   const isDesktop = useMediaQuery("lg");
@@ -60,21 +64,16 @@ export const Header = () => {
       <motion.div
         ref={ref}
         className={clsx(
-          "fixed left-0 right-0 h-[60px] mx-[2%] px-[5%] lg:mx-[10%] lg:px-8 flex justify-between items-center transition-colors z-10 rounded-md",
+          "fixed left-0 right-0 h-[60px] px-[5%]  lg:px-8 flex lg:justify-center items-center transition-colors rounded-md",
+          type === "home" ? "bg-brand-blue mx-0" : "bg-transparent lg:mx-[10%]",
           isScrolled &&
-            "bg-sex-blue-4 lg:bg-sex-blue-0 bg-opacity-50 lg:bg-opacity-75 backdrop-blur-md ",
+            "bg-sex-blue-4 lg:bg-brand-lilac bg-opacity-50 lg:bg-opacity-75 backdrop-blur-md ",
         )}
+        style={{ zIndex: 1000 }}
         variants={variants}
         initial={{ y: -100, opacity: 0 }}
         animate={isScrolled ? "scrolled" : "base"}
       >
-        <Link
-          href="/"
-          className="text-2xl lg:text-4xl font-black text-sex-blue"
-        >
-          SEXTIVAL
-        </Link>
-
         <div
           onClick={() => {
             lock(true);
@@ -82,20 +81,75 @@ export const Header = () => {
           }}
           className="lg:hidden cursor-pointer"
         >
-          <MenuIcon className="w-6 h-6 text-sex-blue" />
+          <MenuIcon
+            className={clsx(
+              "w-6 h-6",
+              type === "root" ? "text-brand-blue" : "text-white",
+            )}
+          />
         </div>
 
-        <div className="hidden lg:flex gap-8 text-sex-blue font-bold text-md">
-          {PAGES.map(({ label, link, subLinks }) => {
+        <div className="hidden lg:flex gap-8 text-white">
+          {PAGES.main.map(({ label, link, subLinks }) => {
             return (
               <Fragment key={label}>
                 {link && (
-                  <Link href={link} key={link}>
+                  <Link
+                    href={link}
+                    key={link}
+                    className={clsx(
+                      "font-bold",
+                      type === "root" && "text-brand-blue",
+                    )}
+                  >
                     {label}
                   </Link>
                 )}
                 {subLinks && (
                   <div className="relative">
+                    <div
+                      className="flex items-center cursor-pointer relative"
+                      onClick={() => {
+                        selected === label
+                          ? setSelected(undefined)
+                          : setSelected(label);
+                      }}
+                    >
+                      <span>{label}</span>
+                      <DownIcon selected={selected === label} />
+                    </div>
+                    <Dropdown isSelected={selected === label}>
+                      {subLinks.map((sub) => (
+                        <div key={sub.link}>
+                          <Link href={sub.link}>{sub.label}</Link>
+                        </div>
+                      ))}
+                    </Dropdown>
+                  </div>
+                )}
+              </Fragment>
+            );
+          })}
+
+          {PAGES.other.map(({ label, link, subLinks }) => {
+            return (
+              <Fragment key={label}>
+                {link && (
+                  <Link
+                    href={link}
+                    key={link}
+                    className={clsx(type === "root" && "text-brand-blue")}
+                  >
+                    {label}
+                  </Link>
+                )}
+                {subLinks && (
+                  <div
+                    className={clsx(
+                      "relative",
+                      type === "root" && "text-brand-blue",
+                    )}
+                  >
                     <div
                       className="flex items-center cursor-pointer relative"
                       onClick={() => {

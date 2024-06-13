@@ -3,6 +3,7 @@ export { getGuest } from "./guest/get-guest.query";
 export { getGuests } from "./guest/get-guests.query";
 // SCHEDULE
 export { getSchedule } from "./schedule/get-schedule.query";
+export { getSchedule2024 } from "./schedule/get-schedule-2024.query";
 // SERVICE
 export { getService } from "./service/get-service.query";
 export { getServices } from "./service/get-services.query";

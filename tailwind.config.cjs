@@ -7,6 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        "brand-blue": "#0A0A82",
+        "brand-red": "#D1144A",
+        "brand-lilac": "#D1C8FF",
+        "brand-rose": "#E93E80",
+
         "sex-blue": {
           0: "#F2F0F9",
           2: "#9492F8",

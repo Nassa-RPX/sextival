@@ -4,11 +4,7 @@ import type { NextPage } from "next";
 import { Hero } from "@sextival/components/hero";
 
 const Home: NextPage = () => {
-  return (
-    <>
-      <Hero />
-    </>
-  );
+  return <Hero />;
 };
 
 export default Home;

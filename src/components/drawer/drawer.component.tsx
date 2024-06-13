@@ -12,26 +12,33 @@ interface Props extends DefaultProps {
   title?: string;
 }
 
-export const Drawer = (
-  { title, children, open, onClose, className }: Props,
-) => {
+export const Drawer = ({
+  title,
+  children,
+  open,
+  onClose,
+  className,
+}: Props) => {
   const { width } = useWindowSize();
 
-  const variants: Variants = useMemo(() => ({
-    closed: {
-      x: width,
-    },
-    opened: {
-      x: 0,
-      transition: {
-        type: "tween",
+  const variants: Variants = useMemo(
+    () => ({
+      closed: {
+        x: width,
       },
-    },
-  }), [width]);
+      opened: {
+        x: 0,
+        transition: {
+          type: "tween",
+        },
+      },
+    }),
+    [width],
+  );
 
   const defaultClassName = useMemo(
     () =>
-      "fixed z-20 w-screen top-0 left-0 bottom-0 right-0 bg-sex-blue-2 bg-opacity-70 backdrop-blur-lg p-8",
+      "fixed  w-screen top-0 left-0 bottom-0 right-0 bg-brand-lilac bg-opacity-70 backdrop-blur-lg p-8",
     [],
   );
 
@@ -46,12 +53,13 @@ export const Drawer = (
         !open && "pointer-events-none",
         open ? "opacity-100" : "opacity-0",
       )}
+      style={{ zIndex: 2000 }}
     >
       <div className="flex items-center justify-between mb-6">
         {title && <span className="font-bold text-2xl">{title}</span>}
         <RoundedCloseIcon
           onClick={onClose}
-          className="h-6 w-6 text-sex-blue-6"
+          className="h-6 w-6 text-brand-blue"
         />
       </div>
       {children}

@@ -1,4 +1,10 @@
-import { DatabaseObjectResponse, PageObjectResponse, PartialDatabaseObjectResponse, PartialPageObjectResponse , RichTextItemResponse} from "@notionhq/client/build/src/api-endpoints";
+import {
+  DatabaseObjectResponse,
+  PageObjectResponse,
+  PartialDatabaseObjectResponse,
+  PartialPageObjectResponse,
+  RichTextItemResponse,
+} from "@notionhq/client/build/src/api-endpoints";
 import { MdStringObject } from "notion-to-md/build/types";
 
 export interface Guest {
@@ -26,6 +32,8 @@ export type Day = 17 | 18;
 
 export type GroupedSchedule = Record<Day, Record<Type, Talk[]>>;
 
+export type GroupedSchedule2024 = Record<22 | 23, Record<Type, Talk[]>>;
+
 export interface Service {
   id: string;
   name: string;
@@ -47,7 +55,10 @@ export interface Glossary {
 
 export type NotionPage = MdStringObject;
 
-export type NotionResult = PageObjectResponse | PartialPageObjectResponse | PartialDatabaseObjectResponse | DatabaseObjectResponse
+export type NotionResult =
+  | PageObjectResponse
+  | PartialPageObjectResponse
+  | PartialDatabaseObjectResponse
+  | DatabaseObjectResponse;
 
 export type NotionRichText = RichTextItemResponse;
-

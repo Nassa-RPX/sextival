@@ -10,11 +10,7 @@ interface Props extends DefaultProps {
 export const Page = ({ children, className, title }: Props) => {
   return (
     <div
-      className={clsx(
-        "flex flex-col  mb-10",
-        !title && "mt-[80px]",
-        className,
-      )}
+      className={clsx("flex flex-col  mb-10", !title && "mt-[80px]", className)}
     >
       {title && (
         <div
@@ -24,7 +20,7 @@ export const Page = ({ children, className, title }: Props) => {
         >
           <Heading
             order={1}
-            className="text-sex-red-4 text-4xl lg:text-6xl bg-sex-gradient-text text-transparent bg-clip-text text-center"
+            className="text-4xl lg:text-6xl text-brand-blue text-center"
           >
             {title}
           </Heading>
