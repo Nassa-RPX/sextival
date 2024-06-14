@@ -5,8 +5,7 @@ export const Support = () => {
     <section className="flex flex-col lg:flex-row justify-between gap-4 lg:gap-8">
       <div className="order-2 lg:order-1 flex flex-col gap-4 text-lg lg:-text-xl">
         <p>
-          Siamo tantə, giovani, con capacità diverse e desbelinatə. Ma siam’
-          {" "}
+          Siamo tantə, giovani, con capacità diverse e desbelinatə. Ma siam’{" "}
           <strong>misci</strong>.
         </p>
 
@@ -40,17 +39,15 @@ export const Support = () => {
         </p>
 
         <p>
-          Unisciti alla nostra giovane rivoluzione. E ricordati:<strong>
-            stay sexy
-          </strong>.
+          Unisciti alla nostra giovane rivoluzione. E ricordati:
+          <strong>stay sexy</strong>.
         </p>
       </div>
 
       <iframe
         className="order-1 lg:order-2 w-full h-[550px]"
-        src="https://www.produzionidalbasso.com/projects/33860/widget"
-      >
-      </iframe>
+        src="https://www.produzionidalbasso.com/projects/34843/widget"
+      ></iframe>
     </section>
   );
 };

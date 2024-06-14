@@ -23,9 +23,7 @@ interface Props {
 export const Schedule = ({ schedule, centered }: Props) => {
   const [selectedDay, setSelectedDay] = useState<Day>(17);
 
-  const [selectedType, setSelectedType] = useState<Type>(
-    "Intervento",
-  );
+  const [selectedType, setSelectedType] = useState<Type>("Intervento");
 
   const onChangeDay = useCallback((day: 17 | 18) => {
     setSelectedDay(day);
@@ -81,7 +79,8 @@ export const Schedule = ({ schedule, centered }: Props) => {
         )}
       >
         <AnimatePresence mode="popLayout">
-          {schedule && schedule[selectedDay] &&
+          {schedule &&
+            schedule[selectedDay] &&
             schedule[selectedDay][selectedType].map((t, i) => (
               <Talk
                 key={t.title}
@@ -89,8 +88,7 @@ export const Schedule = ({ schedule, centered }: Props) => {
                 title={t.title}
                 description={t.description}
                 hour={t.hour}
-                guests_ids={t.guest_ids}
-                onClickGuests={(ids) => setSelectedGuests(ids)}
+                guests={[]}
               />
             ))}
         </AnimatePresence>

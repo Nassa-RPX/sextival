@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { useFetch } from "@sextival/hooks";
-import { guest as mappingGuest} from "@sextival/server/mappings/";
+import { guest as mappingGuest } from "@sextival/server/mappings/";
 import { Guest as IGuest } from "@sextival/server/types";
 import { Avatar } from "@sextival/ui/avatar/avatar.ui";
 import { getInitials } from "@sextival/utils";
@@ -15,7 +15,9 @@ interface Props {
 export const ModalGuests = ({ guest_ids }: Props) => {
   return (
     <div className="mt-2 flex flex-col gap-2">
-      {guest_ids.map((guest) => <Guest key={guest} id={guest} />)}
+      {guest_ids.map((guest) => (
+        <Guest key={guest} id={guest} />
+      ))}
     </div>
   );
 };
@@ -32,8 +34,6 @@ const Guest = ({ id }: { id: string }) => {
         <Avatar
           img={guest.data?.cover}
           alt={getInitials(guest.data?.name)}
-          isFirst={true}
-          isLoading={!guest || !guest.data}
           className="w-[50px] h-[50px]"
         />
         <span>
