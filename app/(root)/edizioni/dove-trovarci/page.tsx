@@ -14,30 +14,27 @@ export const metadata: Metadata = {
 const ComeTrovarci = () => {
   return (
     <Page>
-      <section className="flex flex-col gap-4 items-center ">
-        <h1 className="text-6xl font-bold bg-sex-gradient-text text-transparent bg-clip-text">
-          DOVE?
-        </h1>
-        <div className="flex gap-1 items-center justify-center text-center">
-          <MapIcon className="w-[60px] h-[60px] lg:h-[40px] lg:w-[40px]" />
-          <h1 className="text-4xl font-bold leading-none">
-            Via San Pietro 59, Rapallo (GE)
-          </h1>
-        </div>
+      <section className="flex gap-4 justify-center text-center">
+        <div className="flex flex-col items-center gap-2">
+          <h1 className="text-6xl font-bold text-brand-blue ">DOVE?</h1>
+          <div className="flex gap-1 items-center justify-center text-center">
+            <MapIcon className="w-[60px] h-[60px] lg:h-[40px] lg:w-[40px]" />
+            <h1 className="text-xl font-bold leading-none">
+              Via San Pietro 59, Rapallo (GE)
+            </h1>
+          </div>
 
-        <MapLocation />
+          <MapLocation />
 
-        <h1 className="text-4xl font-bold bg-sex-gradient-text text-transparent bg-clip-text">
-          Come trovarci
-        </h1>
-        <div className="flex gap-4">
-          <VideoLocation url={LOCATION.VIDEOS.highway}>
-            Dall&apos;uscita autostradale
-          </VideoLocation>
+          <div className="flex gap-2">
+            <VideoLocation url={LOCATION.VIDEOS.highway}>
+              Dall&apos;uscita autostradale
+            </VideoLocation>
 
-          <VideoLocation url={LOCATION.VIDEOS.station}>
-            Dalla stazione ferroviaria
-          </VideoLocation>
+            <VideoLocation url={LOCATION.VIDEOS.station}>
+              Dalla stazione ferroviaria
+            </VideoLocation>
+          </div>
         </div>
       </section>
 

@@ -13,9 +13,7 @@ export const Sexybus = () => {
 
   return (
     <section className="flex flex-col gap-8 items-center pb-4">
-      <h1 className="text-6xl font-bold bg-sex-gradient-text text-transparent bg-clip-text leading-none">
-        SEXYBUS
-      </h1>
+      <h1 className="text-6xl font-bold text-brand-blue">SEXYBUS</h1>
 
       <p className="xl:w-1/3 mx-auto text-justify">
         Il <strong>SEXYBUS</strong> é un servizio <strong>gratuito</strong>{" "}
@@ -26,11 +24,11 @@ export const Sexybus = () => {
 
       <div className="flex gap-2">
         <TabButton selected={selected === 1} onClick={() => setSelected(1)}>
-          Sabato 17
+          Sabato 22
         </TabButton>
 
         <TabButton selected={selected === 2} onClick={() => setSelected(2)}>
-          Domenica 18
+          Domenica 23
         </TabButton>
       </div>
       <div className="flex flex-col gap-2 max-w-full">
@@ -56,10 +54,7 @@ export const Sexybus = () => {
 
       <div className="lg:w-1/3 p-4 rounded-md bg-sex-blue-2 bg-opacity-40 ">
         OPPURE POTETE USUFRUIRE DELLE CORSE DEL GENTILISSIMO, MA MENO ROSA,{" "}
-        <strong>
-          BUS NUMERO 798
-        </strong>{" "}
-        info{" "}
+        <strong>BUS NUMERO 798</strong> info{" "}
         <a className="font-bold" href="http://www.amt.genova.it/amt/">
           amt.genova.it/amt/
         </a>
@@ -68,25 +63,17 @@ export const Sexybus = () => {
   );
 };
 
-const Table = (
-  { row }: { row: LOCATION.Col[] },
-) => (
+const Table = ({ row }: { row: LOCATION.Col[] }) => (
   <div className="flex flex-col overflow-x-auto">
     <div className="inline-block min-w-full">
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-sex-red-4 bg-sex-red-0 text-center text-sm font-light ">
-          <thead className="border-b border-sex-red-4 bg-sex-red-6 font-medium ">
+        <table className="min-w-full border border-brand-rose bg-brand-rose bg-opacity-20 text-center text-sm font-light ">
+          <thead className="border-b border-brand-rose bg-brand-rose text-white font-medium ">
             <tr>
-              <th
-                scope="col"
-                className="border-r px-6 py-4 border-sex-red-4 "
-              >
+              <th scope="col" className="border-r px-6 py-4 border-brand-rose">
                 SEXYBUS
               </th>
-              <th
-                scope="col"
-                className="border-r px-6 py-4 border-sex-red-4"
-              >
+              <th scope="col" className="border-r px-6 py-4 border-brand-rose">
                 Treno consigliato (Levante)
               </th>
               <th scope="col" className="px-6 py-4">
@@ -96,11 +83,11 @@ const Table = (
           </thead>
           <tbody>
             {row.map((v) => (
-              <tr key={v.sexybus} className="border-b border-sex-red-4">
-                <td className="whitespace-nowrap border-r px-6 py-4 font-medium border-sex-red-4">
+              <tr key={v.sexybus} className="border-b border-brand-rose">
+                <td className="whitespace-nowrap border-r px-6 py-4 font-medium border-brand-rose">
                   {v.sexybus}
                 </td>
-                <td className="whitespace-nowrap border-r px-6 py-4 border-sex-red-4">
+                <td className="whitespace-nowrap border-r px-6 py-4 border-brand-rose">
                   <span dangerouslySetInnerHTML={{ __html: v.levante }} />
                 </td>
 
@@ -121,13 +108,11 @@ interface TabButtonProps extends DefaultProps {
   onClick: () => void;
 }
 
-const TabButton = (
-  { selected, onClick, children }: TabButtonProps,
-) => (
+const TabButton = ({ selected, onClick, children }: TabButtonProps) => (
   <div
     className={clsx(
       "p-2 rounded-md cursor-pointer text-sm font-bold border-2 border-sex-blue-2 transition-colors text-sex-blue-6",
-      selected ? "bg-sex-blue-2 " : "bg-transparent ",
+      selected ? "bg-brand-blue text-white" : "bg-transparent text-brand-blue",
     )}
     onClick={onClick}
   >

@@ -11,7 +11,7 @@ export interface Guest {
   name: string;
   description: string;
   cover: string;
-
+  id: string;
   talk_ids: string[];
 }
 

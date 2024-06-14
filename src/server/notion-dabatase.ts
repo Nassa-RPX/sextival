@@ -1,4 +1,5 @@
 export const GUESTS = "62deabcefa3a4f35aad73718a50dcc85";
+export const GUESTS_2024 = "9773ecaa3ef749ddb77aedb4bd10c568";
 export const SCHEDULE = "5d86cfe4e9c54c7a8e31d06e12e6e5d1";
 export const SCHEDULE_2024 = "3e785dcf733644c1be63493bca253822";
 

@@ -17,7 +17,8 @@ export const PAGES: { main: Pages; other: Pages } = {
       link: "/edizioni/2024/programma",
     },
 
-    { label: "OSPITI", link: "/ospiti" },
+    { label: "OSPITI", link: "/edizioni/2024/ospiti" },
+    { label: "COME TROVARCI", link: "/edizioni/dove-trovarci" },
   ],
   other: [
     {

@@ -2,18 +2,20 @@ import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints"
 import { NotionResult, Schedule, Talk } from "../types";
 
 export const schedule = (schedule: QueryDatabaseResponse): Schedule =>
-  schedule.results.map((partial) => talk(partial)).filter((v): v is Talk =>
-    !!v && !!v.title && !!v.type && !!v.day && !!v.hour
-  );
+  schedule.results
+    .map((partial) => talk(partial))
+    .filter(
+      (v): v is Talk => !!v && !!v.title && !!v.type && !!v.day && !!v.hour,
+    );
 
 export const talk = (partial: NotionResult) => {
   if ("properties" in partial) {
     const p = partial.properties;
-
     const Descrizione = p.Descrizione;
     let description = null;
     if (
-      Descrizione && Descrizione.type === "rich_text" &&
+      Descrizione &&
+      Descrizione.type === "rich_text" &&
       Descrizione.rich_text.length > 0
     ) {
       // description = Descrizione.rich_text[0]?.plain_text;
@@ -30,7 +32,9 @@ export const talk = (partial: NotionResult) => {
     const Giorno = p.Giorno;
     let day = undefined;
     if (
-      Giorno && Giorno.type === "select" && Giorno.select &&
+      Giorno &&
+      Giorno.type === "select" &&
+      Giorno.select &&
       !("options" in Giorno.select) &&
       Giorno.select.name
     ) {
@@ -40,8 +44,11 @@ export const talk = (partial: NotionResult) => {
     const Ore = p.Ore;
     let hour = undefined;
     if (
-      Ore && Ore.type === "select" && Ore.select &&
-      !("options" in Ore.select) && Ore.select.name
+      Ore &&
+      Ore.type === "select" &&
+      Ore.select &&
+      !("options" in Ore.select) &&
+      Ore.select.name
     ) {
       hour = Ore.select.name;
     }
@@ -49,8 +56,11 @@ export const talk = (partial: NotionResult) => {
     const Tipo = p.Tipo;
     let type = undefined;
     if (
-      Tipo && Tipo.type === "select" && Tipo.select &&
-      !("options" in Tipo.select) && Tipo.select.name
+      Tipo &&
+      Tipo.type === "select" &&
+      Tipo.select &&
+      !("options" in Tipo.select) &&
+      Tipo.select.name
     ) {
       type = Tipo.select.name;
     }
@@ -59,7 +69,9 @@ export const talk = (partial: NotionResult) => {
     let guest_ids: string[] = [];
 
     if (
-      Ospiti && Ospiti.type === "relation" && Array.isArray(Ospiti.relation) &&
+      Ospiti &&
+      Ospiti.type === "relation" &&
+      Array.isArray(Ospiti.relation) &&
       Ospiti.relation.length > 0
     ) {
       guest_ids = Ospiti.relation.map((v) => v.id);

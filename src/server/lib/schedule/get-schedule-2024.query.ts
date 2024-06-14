@@ -16,6 +16,13 @@ const groupSchedule = (schedule: Schedule) => {
 export const getSchedule2024 = async () => {
   const raw = await client.databases.query({
     database_id: SCHEDULE_2024,
+
+    sorts: [
+      {
+        property: "Ore",
+        direction: "ascending",
+      },
+    ],
   });
 
   return groupSchedule(schedule(raw));

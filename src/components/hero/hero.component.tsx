@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { DownloadSchedule } from "./download-schedule";
 
 export const Hero = () => {
   return (
@@ -14,7 +15,7 @@ export const Hero = () => {
             SEXTIVAL
           </h1>
           <h3 className="text-xl md:text-2xl text-white font-bold text-center drop-shadow-md">
-            Rapallo, via San Pietro (Salita Bosen)
+            Rapallo, via San Pietro (Salita Bonsen)
           </h3>
         </div>
 
@@ -26,9 +27,7 @@ export const Hero = () => {
             height={710}
             className="pointer-events-none mx-auto mt-auto"
           />
-          <div className="py-4 px-8 lg:px-10 lg:py-10 rounded-2xl shadow-lg bg-brand-rose bg-opacity-80 backdrop-blur-sm text-white border-2 drop-shadow-md border-brand-rose text-xl font-bold absolute bottom-[30%] sm:bottom-[20%] md:bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer z-10 text-center">
-            SCARICA IL PROGRAMMA
-          </div>
+          <DownloadSchedule />
         </div>
 
         <div className="md:hidden relative w-full h-full flex items-end ">
@@ -41,9 +40,7 @@ export const Hero = () => {
             />
           </div>
 
-          <div className="py-4 px-8 lg:px-10 lg:py-10 rounded-2xl shadow-lg bg-brand-rose bg-opacity-80 backdrop-blur-sm text-white border-2 drop-shadow-md border-brand-rose text-xl font-bold absolute bottom-[5%] left-1/2 -translate-x-1/2 cursor-pointer z-10 text-center">
-            SCARICA IL PROGRAMMA
-          </div>
+          <DownloadSchedule />
         </div>
       </div>
     </section>
