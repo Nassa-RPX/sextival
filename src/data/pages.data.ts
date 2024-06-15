@@ -18,6 +18,8 @@ export const PAGES: { main: Pages; other: Pages } = {
     },
 
     { label: "OSPITI", link: "/edizioni/2024/ospiti" },
+    { label: "PARTNER", link: "/edizioni/2024/partner" },
+
     { label: "COME TROVARCI", link: "/edizioni/dove-trovarci" },
   ],
   other: [

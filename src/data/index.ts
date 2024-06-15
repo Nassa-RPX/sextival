@@ -6,3 +6,4 @@ export { TAGLINE } from "./tagline.data";
 export { TEAM } from "./team.data";
 export { DEFINITIONS } from "./definitions.data";
 export { LOCATION };
+export { PARTNER } from "./partner.data";
