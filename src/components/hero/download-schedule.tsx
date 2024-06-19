@@ -1,13 +1,13 @@
 "use client";
 
 const SCHEDULE_URL =
-  "https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/2024%2Fprogramma-sextival-2024.pdf";
+  "https://pub-017f84a06d12468b8456a49acac6a458.r2.dev/2024%2Fprogramma.jpg";
 
 export const DownloadSchedule = () => {
   const onClickDownload = () => {
     const link = document.createElement("a");
     link.href = SCHEDULE_URL;
-    link.download = "programma-sextival-2024.pdf";
+    link.download = "programma-sextival-2024.jpg";
     link.target = "_blank";
     link.dispatchEvent(new MouseEvent("click"));
   };
